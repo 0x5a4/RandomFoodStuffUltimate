@@ -17,10 +17,10 @@ public class NEIConfig implements IConfigureNEI {
 		API.registerUsageHandler(new NEIFatInfuserRecipeHandler());
 		
 		//Highlight Handlers
-		API.registerHighlightHandler(new ALBHighlightHandler(), Layout.HEADER);
-		API.registerHighlightIdentifier(RandomBlocks.blockAwfull, new ALBHighlightHandler());
-		API.registerHighlightHandler(new CookingPotHighlightHandler(), Layout.HEADER);
-		API.registerHighlightHandler(new FatInfuserHighlightHandler(), Layout.HEADER);
+		API.registerHighlightHandler(new NEIALBHighlightHandler(), Layout.HEADER);
+		API.registerHighlightIdentifier(RandomBlocks.blockAwfull, new NEIALBHighlightHandler());
+		API.registerHighlightHandler(new NEICookingPotHighlightHandler(), Layout.HEADER);
+		API.registerHighlightHandler(new NEIFatInfuserHighlightHandler(), Layout.HEADER);
 		
 		//Hide Items
 		API.hideItem(new ItemStack(Item.getItemFromBlock(RandomBlocks.blockLauch)));

@@ -16,7 +16,7 @@ import shit.randomfoodstuff.RandomBlocks;
 import shit.randomfoodstuff.item.tool.IAwfullLookingBlockBreaker;
 import shit.randomfoodstuff.tileentity.TileEntityBlockAwfull;
 
-public class ALBHighlightHandler implements IHighlightHandler{
+public class NEIALBHighlightHandler implements IHighlightHandler{
 
 	@Override
 	public ItemStack identifyHighlight(World world, EntityPlayer player, MovingObjectPosition mop) {

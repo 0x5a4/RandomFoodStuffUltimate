@@ -15,10 +15,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+import shit.randomfoodstuff.ConfigHandler;
 import shit.randomfoodstuff.RFMain;
 import shit.randomfoodstuff.RandomItems;
 import shit.randomfoodstuff.Reference;
-import shit.randomfoodstuff.client.config.ConfigHandler;
 import shit.randomfoodstuff.util.ItemHelper;
 
 public class ItemBobTheBenni extends Item {

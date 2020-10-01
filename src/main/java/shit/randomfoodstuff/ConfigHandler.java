@@ -1,4 +1,4 @@
-package shit.randomfoodstuff.client.config;
+package shit.randomfoodstuff;
 
 import java.io.File;
 

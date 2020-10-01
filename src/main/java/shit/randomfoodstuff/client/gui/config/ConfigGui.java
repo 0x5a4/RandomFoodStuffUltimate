@@ -1,4 +1,4 @@
-package shit.randomfoodstuff.client.config.gui;
+package shit.randomfoodstuff.client.gui.config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import cpw.mods.fml.client.config.IConfigElement;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.ConfigElement;
+import shit.randomfoodstuff.ConfigHandler;
 import shit.randomfoodstuff.Reference;
-import shit.randomfoodstuff.client.config.ConfigHandler;
 
 public class ConfigGui extends GuiConfig{
 

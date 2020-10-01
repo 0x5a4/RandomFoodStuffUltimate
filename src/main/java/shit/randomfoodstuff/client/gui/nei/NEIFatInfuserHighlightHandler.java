@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import shit.randomfoodstuff.RandomBlocks;
 import shit.randomfoodstuff.tileentity.TileEntityFatInfuser;
 
-public class FatInfuserHighlightHandler implements IHighlightHandler{
+public class NEIFatInfuserHighlightHandler implements IHighlightHandler{
 
 	@Override
 	public ItemStack identifyHighlight(World world, EntityPlayer player, MovingObjectPosition mop) {

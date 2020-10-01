@@ -1,4 +1,4 @@
-package shit.randomfoodstuff.client.config.gui;
+package shit.randomfoodstuff.client.gui.config;
 
 import java.util.Set;
 

@@ -9,8 +9,8 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
+import shit.randomfoodstuff.ConfigHandler;
 import shit.randomfoodstuff.Reference;
-import shit.randomfoodstuff.client.config.ConfigHandler;
 
 public class RFPotion extends Potion {
 

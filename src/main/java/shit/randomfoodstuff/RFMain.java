@@ -9,6 +9,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -20,7 +21,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
-import shit.randomfoodstuff.client.config.ConfigHandler;
 import shit.randomfoodstuff.client.gui.GuiHandler;
 import shit.randomfoodstuff.event.handler.AchievementHandler;
 import shit.randomfoodstuff.event.handler.RFEventHandler;
@@ -64,6 +64,8 @@ public class RFMain {
 		FMLCommonHandler.instance().bus().register(new AchievementHandler());
 		MinecraftForge.addGrassSeed(new ItemStack(RandomItems.itemLauch), 10);
 		MinecraftForge.addGrassSeed(new ItemStack(RandomItems.itemMateTee), 5);
+		//Waila Registration
+		FMLInterModComms.sendMessage(Reference.WailaModID, "register", Reference.WailaConfigPath);
 		
 		// Potion-Array Extension
 		if (!(Potion.potionTypes.length == 256)) {

@@ -14,7 +14,7 @@ import shit.randomfoodstuff.RandomBlocks;
 import shit.randomfoodstuff.cooking.SoupRegistry;
 import shit.randomfoodstuff.tileentity.TileEntityCookingPot;
 
-public class CookingPotHighlightHandler implements IHighlightHandler {
+public class NEICookingPotHighlightHandler implements IHighlightHandler {
 
 	@Override
 	public ItemStack identifyHighlight(World world, EntityPlayer player, MovingObjectPosition mop) {
@@ -45,9 +45,13 @@ public class CookingPotHighlightHandler implements IHighlightHandler {
 							}
 						}
 						
-						currenttip.add("Ingriedients: ");
-						for (String s : ingredList) {
-							currenttip.add("  " + s);
+						if (ingredList.isEmpty()) {
+							currenttip.add("Ingriedients: None");
+						} else {
+							currenttip.add("Ingriedients: ");
+							for (String s : ingredList) {
+								currenttip.add("  " + s);
+							}							
 						}
 					}
 					
