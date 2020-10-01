@@ -1,0 +1,16 @@
+[
+{
+  "modid": "randomfoodstuffultimate",
+  "name": "Random Food Stuff Ultimate",
+  "description": "Random Food Stuff Ultimate is here!",
+  "mcversion": "${mcversion}",
+  "version": "1.5",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["NoDontDoIt", "Eicher"],
+  "credits": "Me, myself, my red couch, and a bunch of cool chickens",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

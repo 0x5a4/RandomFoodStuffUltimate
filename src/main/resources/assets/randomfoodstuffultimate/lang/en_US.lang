@@ -1,0 +1,134 @@
+//Item
+item.itemFat.name=Fat
+item.itemLauch.name=Lauch
+item.itemPepperoni.name=Pepperoni
+item.itemWarpingSchnitzel.name=Warping Schnitzel
+itemEmptyCan.name=Empty Can
+itemWaterCan.name=Filled Can
+itemCarotDrink.name=Carrot Drink
+itemProteineDrink.name=Proteine Drink
+itemEnergyDrink.name=Energy Drink
+item.itemSchokoriegel.name=Schokoriegel
+item.itemFlyingSchnitzel.name=Flying Schnitzel
+itemRawBenni.name=Fat Benni
+itemMediumBenni.name=Medium Benni
+itemRoastedBenni.name=Roasted Benni
+itemRawArthur.name=Raw Arthur
+itemRoastedArthur.name=Roasted Arthur
+item.itemMagicBaguette.name=Baguette Magique
+item.itemMutantLauch.name=Mutant Lauch
+item.itemAwfullBreaker.name=Awfull Looking Block Breaker
+item.itemIceCube.name=Ice Cube
+item.itemClubMate.name=Club Mate
+item.itemSchnitzelBackpack.name=Schnitzel Backpack
+itemSchnitzelRaw.name=Raw Schnitzel
+itemSchnitzelCooked.name=Schnitzel
+itemSchnitzelSpicy.name=Spicy Schnitzel
+item.itemSuperFatBenni.name=Saturated Benni
+item.itemSoup.name=Delicious Soup
+item.itemSoupLadle.name=Soup Ladle
+item.itemSuperMushroom.name=Super Natural Mushroom
+item.itemMateTee.name=Mate Tee
+item.itemScythe.name=Scythe
+item.itemCactusGuide.name=Cactus Guide
+item.itemBobTheBenni.name=Bob the Benni
+
+//Blocks
+tile.blockLauch.name=Lauch
+tile.blockPepperoni=Pepperoni
+tile.blockAwfull.name=Awful Looking Block
+tile.blockFatInfuser.name=Fat Infuser
+tile.blockBenni.name=Benni
+tile.blockCookingPot.name=Cooking Pot
+tile.blockMate.name=Mate Tee
+
+//Guide
+
+//Articles
+guide.article.soupLadle.text=The {c:Yellow}Soup Ladle {r}is an essential tool for cooking with the {c:Red}Cooking Pot{r}. It is used to remove all remnants of food from the {c:Red}Cooking Pot{r}, so new {c:Blue}ingredients {r}and {c:Blue}spices {r}can be tossed in.
+guide.article.soupLadle.heading=Soup Ladle
+guide.article.baguette.text=This is a french magic wand, used to control the weather. A {c:Yellow}Baguette Magique {r}can be either a powerful weapon by casting lightning bolts around the one daring to try it, or simply a convenience item by starting or ending storms (cower for this power). Be careful!
+guide.article.baguette.heading=Baguette Magique
+guide.article.fatInfuser.text=You want anything to be a bit thiccer? The {c:Yellow}Fat Infuser {r}allows you to do exactly that: put some extra {c:Black}Fat {r}on top of something! You are going to need it in order to progress throughout your strange culinary journey. {nl}READY, {c:Black}FAT{r}, GO!
+guide.article.fatInfuser.heading=Fat Infuser
+guide.article.awfulBlock.text=The name says it all. This block just looks incredibly rediculous and takes hours to break, therefore it is good for annoying other people. It is also used to craft a tool that is meant to ease breaking {c:Yellow}Awful Looking Blocks{r}: the {c:Red}Awful Looking Block Breaker{r}. You became the very thing you swore to destroy!
+guide.article.awfulBlock.heading=Awfull Looking Block
+guide.article.drinks.text=There are lots of food I can tell you of, but we shan't forget about the {c:Yellow}drinks{r}. To make these, you will have to fill an {c:Black}Empty Can {r}with water, just like a bottle. This {c:Black}Filled Can {r}is needed as a basis for all {c:Yellow}drinks{r}. {c:Yellow}Drinks {r}will grant you powerful effects for a long duration and the best thing is that you don't need to be hungry to consume them. {p}The {c:Yellow}Protein Drink {r} is going to make you really strong for ten minutes. Why would you go to the gym when you can have steroids without sideeffects? But why would somebody, who can carry multiple tons of gold simultaniously, go to the gym, anyway, right?{p}{c:Black}Carrots {r}are good for your eyes. This is why the {c:Yellow}Carrot Drink {r}is going to make it easier to see in the dark. And because it has such a long duration, it can last you more than one night! {p}With an {c:Yellow}Energy Drink {r}you are going to be faster than Sanic! The only thing you won't be a able to run from is the duration of this effect and it will haunt you for quite some time! Don't look up the amount of {c:Black}sugar {r}that is in there. You wouldn't like it.
+guide.article.drinks.heading=Drinks
+guide.article.backpack.text=This tool is used frequently by germans, since it allows them to eat during work. Just put your diffrent types of {c:Blue}Schnitzel {r}into the {c:Yellow}Schnitzel Backpack {r} by using it while sneaking and you will be able to scroll through all of them while crouching and holding the {c:Yellow}Schintzel Backpack{r}. It gives you more room in your inventory, it makes eating efficent and the meal is always ready in time! What is there not to like?
+guide.article.backpack.heading=Schnitzel Backpack
+
+//Menus
+guide.menu.mainMenu.heading=Main Menu
+
+//Miscellaneous
+itemGroup.tabrandomfoodstuffultimate=Random Foodstuff Ultimate
+achievement.lauch=Getting Lauch
+achievement.lauch.desc=Find A Lauch in the Wilderness
+achievement.awfull=What on Earth is this????
+achievement.awfull.desc=Some say its has a very long story
+achievement.pepperoni=FUCK! FUCK! FUCK!
+achievement.pepperoni.desc=Thats kinda spicy...
+achievement.spicy=Delicious!
+achievement.spicy.desc=Its so delicious you cant resist...
+achievement.warping=Spicy Enderpearls!
+achievement.warping.desc=Im here! Now im here! Now im anywhere!
+achievement.flying=Up in the Sky
+achievement.flying.desc=Watch out! It flies away!
+achievement.backpack=Lunchbox-Thingy?
+achievement.backpack.desc=Seems a little unhygienic huh?
+achievement.flyHigh=Dont stop me now!
+achievement.flyHigh.desc=Reaching the Limit? Check!
+achievement.warping2=It works!
+achievement.warping2.desc=Who needs Enderpearls?
+achievement.fat=Gridlock?
+achievement.fat.desc=Aquire Fat
+achievement.fatInfuser=Lets slap some fat on top
+achievement.fatInfuser.desc=Fatter is better
+achievement.cookingPot=Chef
+achievement.cookingPot.desc=This looks like a weird Wok
+achievement.soup=Do i really wanna eat this?
+achievement.soup.desc=Its undefined whats inside...
+achievement.guide=Your best friend
+achievement.guide.desc=Grow a Cactus Guide
+achievement.completionist=Joining the Food-Elite
+achievement.completionist.desc=Complete 'em all
+
+
+
+
+
+
+
+
+//Im paranoid
+randomFoodStuff.achievement.lauch=Getting Lauch
+randomFoodStuff.achievement.lauch.desc=Find A Lauch in the Wilderness
+randomFoodStuff.achievement.awfull=What on Earth is this????
+randomFoodStuff.achievement.awfull.desc=Some say its has a very long story
+randomFoodStuff.achievement.pepperoni=FUCK! FUCK! FUCK!
+randomFoodStuff.achievement.pepperoni.desc=Thats kinda spicy...
+randomFoodStuff.achievement.spicy=Delicious!
+randomFoodStuff.achievement.spicy.desc=Its so delicious you cant resist...
+randomFoodStuff.achievement.warping=Spicy Enderpearls!
+randomFoodStuff.achievement.warping.desc=Im here! Now im here! Now im anywhere!
+randomFoodStuff.achievement.flying=Up in the Sky
+randomFoodStuff.achievement.flying.desc=Watch out! It flies away!
+randomFoodStuff.achievement.backpack=Lunchbox-Thingy?
+randomFoodStuff.achievement.backpack.desc=Seems a little unhygienic huh?
+randomFoodStuff.achievement.flyHigh=Dont stop me now!
+randomFoodStuff.achievement.flyHigh.desc=Reaching the Limit? Check!
+randomFoodStuff.achievement.warping2=It works!
+randomFoodStuff.achievement.warping2.desc=Who needs Enderpearls?
+randomFoodStuff.achievement.fat=Gridlock?
+randomFoodStuff.achievement.fat.desc=Aquire Fat
+randomFoodStuff.achievement.fatInfuser=Lets slap some fat on top
+randomFoodStuff.achievement.fatInfuser.desc=Fatter is better
+randomFoodStuff.achievement.cookingPot=Chef
+randomFoodStuff.achievement.cookingPot.desc=This looks like a weird Wok
+randomFoodStuff.achievement.soup=Do i really wanna eat this?
+randomFoodStuff.achievement.soup.desc=Its undefined whats inside...
+randomFoodStuff.achievement.guide=Your best friend
+randomFoodStuff.achievement.guide.desc=Grow a Cactus Guide
+randomFoodStuff.achievement.completionist=Joining the Food-Elite
+randomFoodStuff.achievement.completionist.desc=Complete 'em all

@@ -1,0 +1,50 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Implemented
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Moldy
+    ->Grants Night Vision, Resistance 2, Strength 1, (Blindness Immunity) when under Light Level 9
+    ->Blindness 6, Weakness 2, (Night Vision immunity) otherwise
+    -Reacts with:
+        -Everything but itself 
+            -> Confusion
+        -As Reagent
+            -> Confusion
+Lauch
+    -> Grants Speed 5, No Fall Damage and Jump Boost, But limits you to 1 heart
+    -Reacts with:
+        -Nothin :/(
+TNT
+    ->Causes Explosion when eaten
+    -Reacts with:
+        -milk
+            -> Weaker explosion
+        -pepperoni
+            -> Firy Explosion
+        -tnt
+            -Stronger Explosion
+        -Everything else
+            -Applies Effect to surroundings(Area Effect)?
+
+Milk
+    -Works like a milk bucket
+    -Reacts with
+        -Nothin, used as Reagent only
+Pepperoni
+    ->Sets you on fire until contact with water, speed 100
+    -Reacts with:
+        -milk
+            -> Speed 3
+Saturation
+    ->Saturation Effect, normally unobtainable in survival
+    -Reacts with:
+        -Milk
+            ->Hunger
+Health Boost
+    ->Health Boost
+    -Reacts with:
+        -Milk
+            -> Poison
+Awake
+    -> Haste 2, Speed 3, Can no longer sleep in bed
+    Reacts with:
+        -Nothin

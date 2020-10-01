@@ -1,0 +1,258 @@
+package shit.randomfoodstuff.cooking;
+
+import static net.minecraft.potion.Potion.moveSpeed;
+import static shit.randomfoodstuff.potion.RFPotion.potionCaffeine;
+import static shit.randomfoodstuff.potion.RFPotion.potionMoldy;
+import static shit.randomfoodstuff.potion.RFPotion.potionPepperoni;
+import static shit.randomfoodstuff.util.DurationHelper.minutesToTicks;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.Explosion;
+import net.minecraft.world.World;
+import shit.randomfoodstuff.cooking.TemplateSoupEffect.ReagentEffect;
+import shit.randomfoodstuff.event.handler.RFEventHandler;
+import shit.randomfoodstuff.util.Duration;
+import shit.randomfoodstuff.util.DurationHelper;
+import shit.randomfoodstuff.util.ItemHelper;
+
+public class SoupRegistry {
+
+    public static HashMap<String, SoupEffect> effectList = new HashMap<String, SoupEffect>();
+    public static ArrayList<Spice> spiceList = new ArrayList<Spice>();
+    public static SoupEffect EMTPY_EFFECT = new SoupEffect("empty") {
+        @Override
+        public void onEaten(ItemStack stack, World world, EntityPlayer player, String reagent) {
+        }
+    };
+    public static final String NOREAGENT = "NO_REAGENT";
+
+    static {
+        // Effects
+        registerSoupEffect(new TemplateSoupEffect.Potion(potionPepperoni.id, minutesToTicks(2), new ReagentEffect("pepperoni", potionPepperoni.id, minutesToTicks(4)), new ReagentEffect("milk", moveSpeed.id, minutesToTicks(3), 2), new ReagentEffect("moldy", Potion.confusion.id, minutesToTicks(1), 2)), "pepperoni");
+        registerSoupEffect(new TemplateSoupEffect.Potion(Potion.confusion.id, minutesToTicks(1), new ReagentEffect(NOREAGENT, potionMoldy.id, minutesToTicks(5))), "moldy");
+        registerSoupEffect(new TemplateSoupEffect.Potion(23, minutesToTicks(2), new ReagentEffect("saturation", 23, minutesToTicks(5)), new ReagentEffect("milk", Potion.hunger.id, minutesToTicks(5)), new ReagentEffect("moldy", Potion.confusion.id, minutesToTicks(1), 2)), "saturation");
+        registerSoupEffect(new TemplateSoupEffect.Potion(21, minutesToTicks(1), new ReagentEffect("healthBoost", 21, minutesToTicks(1), 1), new ReagentEffect("milk", Potion.poison.id, minutesToTicks(1)), new ReagentEffect("moldy", Potion.confusion.id, minutesToTicks(1), 2)), "healthBoost");
+        registerSoupEffect(new TemplateSoupEffect.Potion(potionCaffeine.id, minutesToTicks(5), new ReagentEffect("awake", potionCaffeine.id, minutesToTicks(7)), new ReagentEffect("moldy", Potion.confusion.id, minutesToTicks(1), 2)), "awake");
+        
+        registerSoupEffect(new SoupEffect() {
+            @Override
+            public void onEaten(ItemStack stack, World world, EntityPlayer player, String reagent) {
+                if (reagent.equals("moldy")) {
+                    player.addPotionEffect(createPotionEffect(Potion.confusion.id, minutesToTicks(1), 2));
+                    return;
+                }
+
+                if (!world.isRemote) {
+                    if (!RFEventHandler.playersWithLauch.containsKey(player.getGameProfile().getName())) {
+                        RFEventHandler.playersWithLauch.put(player.getGameProfile().getName(), new Duration(DurationHelper.minutesToSeconds(5)));
+                        player.addChatComponentMessage(new ChatComponentText("You are now a Lauch for 5 Minutes"));
+                    } else {
+                        player.addChatComponentMessage(new ChatComponentText("You are already a Lauch."));
+                        player.addChatComponentMessage(new ChatComponentText("So youre Time has been refreshed to 5 Minutes"));
+                        RFEventHandler.playersWithLauch.get(player.getGameProfile().getName()).refresh();
+                    }
+                }
+            }
+        }, "lauch");
+
+        registerSoupEffect(new SoupEffect() {
+            @Override
+            public void onEaten(ItemStack stack, World world, EntityPlayer player, String reagent) {
+                player.curePotionEffects(new ItemStack(Items.milk_bucket));
+            }
+        }, "milk");
+
+        registerSoupEffect(new SoupEffect() {
+
+            @Override
+            public void onEaten(ItemStack stack, World world, EntityPlayer player, String reagent) {
+                if (reagent.equals("tnt")) {
+                    if (!world.isRemote) {
+                        Explosion explosion = world.createExplosion(player, player.posX, player.posY, player.posZ, 7, true);
+                        player.attackEntityFrom(DamageSource.setExplosionSource(explosion), 20);
+                    }
+                } else if (reagent.equals("milk")) {
+                    if (!world.isRemote) {
+                        Explosion explosion = world.createExplosion(player, player.posX, player.posY, player.posZ, 3, false);
+                        player.attackEntityFrom(DamageSource.setExplosionSource(explosion), 5);
+                    }
+                } else if (reagent.equals("pepperoni")) {
+                    if (!world.isRemote) {
+                        Explosion explosion = world.newExplosion(player, player.posX, player.posY, player.posZ, 5, true, true);
+                        player.attackEntityFrom(DamageSource.setExplosionSource(explosion), 10);
+                    }
+                } else {
+                    if (!world.isRemote) {
+                        Explosion explosion = world.createExplosion(player, player.posX, player.posY, player.posZ, 5, true);
+                        player.attackEntityFrom(DamageSource.setExplosionSource(explosion), 10);
+                    }
+                }
+            }
+
+        }, "tnt");
+
+        // Spices
+        addSpice(new Spice(new ItemStack(Items.milk_bucket), "milk", "Spicy - 1"));
+        addSpice(new Spice(new ItemStack(Items.golden_carrot), "saturation", "No Hunger", createRegentToolTipList(new ReagentToolTip("saturation", "Hunger=0"))));
+        addSpice(new Spice(new ItemStack(Items.golden_apple, 0), "healthBoost", "Health++"));
+        addSpice(new Spice(new ItemStack(Item.getItemFromBlock(Blocks.tnt)), "tnt", "Bumm Bumm MF", createRegentToolTipList(new ReagentToolTip("tnt", "WTF BOOOOOM"), new ReagentToolTip("milk", "Bumm Bumm?"), new ReagentToolTip("pepperoni", "Watch 'Em Burn"))));
+    }
+    
+
+    public static void addSpice(Spice spice) {
+        spiceList.add(spice);
+    }
+
+    public static boolean isItemSpice(ItemStack stack) {
+        if (stack != null) {
+            if (stack.getItem() instanceof ISpice) {
+                return true;
+            }
+
+            for (Spice spice : spiceList) {
+                if (ItemHelper.compareStacks(spice.spice, stack)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public static String getEffectNameFromStack(ItemStack stack) {
+        if (stack != null) {
+            if (stack.getItem() instanceof ISpice) {
+                return ((ISpice) stack.getItem()).getEffectName();
+            }
+
+            for (Spice spice : spiceList) {
+                if (ItemHelper.compareStacks(stack, spice.spice)) {
+                    return spice.getEffectName();
+                }
+            }
+        }
+        return "empty";
+    }
+
+    public static String getInformation(ItemStack stack, String reagent) {
+        if (stack.getItem() instanceof ISpice) {
+            return ((ISpice) stack.getItem()).getInformation(reagent);
+        }
+
+        for (Spice spice : spiceList) {
+            if (ItemHelper.compareStacks(stack, spice.spice)) {
+                return spice.getInformation(reagent);
+            }
+        }
+        return null;
+    }
+
+    public static String getInformation(ItemStack stack, ItemStack reagent) {
+        return getInformation(stack, getEffectNameFromStack(reagent));
+    }
+
+    public static String getInformation(ItemStack stack) {
+        return getInformation(stack, NOREAGENT);
+    }
+
+    public static void registerSoupEffect(SoupEffect effect, String name) {
+        effectList.put(name, effect);
+    }
+
+    public static SoupEffect getEffect(String name) {
+        return effectList.get(name);
+    }
+
+    public static void performEffect(String name, ItemStack stack, World world, EntityPlayer player, String reagent) {
+        if (effectList.containsKey(name)) {
+            effectList.get(name).onEaten(stack, world, player, reagent);
+        }
+    }
+    
+    public static String[] createTooltipList(ArrayList<String> tooltip) {
+        String[] s = new String[tooltip.size()];
+        for (int i = 0; i < tooltip.size(); i++) {
+            s[i] = tooltip.get(i);
+        }
+        return s;
+    }
+
+    public static boolean compareStrings(String s1, String s2) {
+        return s1.toLowerCase().equals(s2.toLowerCase());
+    }
+
+    public static ReagentToolTip[] createRegentToolTipList(ReagentToolTip... params) {
+        return params;
+    }
+
+    public static class Spice implements ISpice {
+
+        private String effectName = null;
+        private String tooltip = null;
+        private ReagentToolTip[] reagentToolTip = null;
+        private ItemStack spice;
+
+        public Spice(ItemStack spice, String effectName, String tooltip, ReagentToolTip[] reagentToolTip) {
+            this.effectName = effectName;
+            this.tooltip = tooltip;
+            this.reagentToolTip = reagentToolTip;
+            this.spice = spice;
+        }
+
+        public Spice(ItemStack spice, String effectName, String tooltip) {
+            this.effectName = effectName;
+            this.tooltip = tooltip;
+            this.spice = spice;
+        }
+
+        public Spice(ItemStack spice, String effectName) {
+            this.effectName = effectName;
+            this.spice = spice;
+        }
+
+        @Override
+        public String getEffectName() {
+            return effectName;
+        }
+
+        @Override
+        public String getInformation(String reagent) {
+            if (reagentToolTip != null) {
+                for (ReagentToolTip tooltip : reagentToolTip) {
+                    if (tooltip.reagent.equals(reagent)) {
+                        return tooltip.tooltip;
+                    }
+                }
+            }
+            return tooltip;
+        }
+    }
+
+    public static class ReagentToolTip {
+        String tooltip;
+        String reagent;
+
+        public ReagentToolTip(String reagent, String tooltip) {
+            this.tooltip = tooltip;
+            this.reagent = reagent;
+        }
+
+        public String getTooltip() {
+            return tooltip;
+        }
+
+        public String getReagent() {
+            return reagent;
+        }
+    }
+}
