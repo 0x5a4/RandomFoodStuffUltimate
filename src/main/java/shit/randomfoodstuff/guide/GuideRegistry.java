@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import shit.randomfoodstuff.guide.recipes.IRecipeDiscoverer;
 
+//Rework
 @SideOnly(Side.CLIENT)
 public class GuideRegistry {
 	
