@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.biome.BiomeGenBase.Height;
 import shit.randomfoodstuff.client.gui.Buttons;
@@ -16,6 +17,9 @@ import shit.randomfoodstuff.client.gui.Buttons.GuideMenuButton;
 @SideOnly(Side.CLIENT)
 public abstract class GuideMenu {
 
+	public static final int defaultWidth = 153;
+	public static final int defaultHeight = 155;
+	
 	private ArrayList<GuiButton> buttons = new ArrayList<GuiButton>();
 	protected String heading;
 	protected String identifier = null;
@@ -23,27 +27,37 @@ public abstract class GuideMenu {
 	
 	public int x = 79;
 	public int y = 14 + GuideFormatter.FONT_HEIGHT;
-	public int width = 153;
-	public int heigth = 155;
+	public int width = defaultWidth;
+	public int heigth = defaultHeight;
 	protected int lineSpacing = 5;
 	
 	public abstract void init();
 	
 	public boolean addMenuButton(String token, String caption, boolean isArticleButton) {
-		int y = this.y + (GuideFormatter.FONT_HEIGHT + lineSpacing) * buttons.size() + parent.getYOffset();
-		return addButton(new GuideMenuButton(parent.getUniqueButtonID(), this.x + parent.getXOffset(), y, token, caption, isArticleButton));
+		return addMenuButton(new GuideMenuButton(parent.getUniqueButtonID(), this.x + parent.getXOffset(), y + parent.getYOffset() + getInternalNextButtonY(), token, caption, isArticleButton));
 	}
 	
-	public boolean addButton(GuiButton button) {
-		int lines = heigth / (GuideFormatter.FONT_HEIGHT + lineSpacing);
-		
-		if (buttons.size() < lines) {
-			buttons.add(button);
-			return true;
-		} else {
-			System.out.println("Cannot fit more buttons in Menu " + identifier);
+	public boolean addMenuButton(String token, String caption, boolean isArticleButton, ResourceLocation texture, int textureX, int textureY, int width, int height) {
+		return addMenuButton(new GuideMenuButton(parent.getUniqueButtonID(), this.x + parent.getXOffset(), y + parent.getYOffset() + getInternalNextButtonY(), token, caption, isArticleButton, texture, textureX, textureY, width, height));
+	}
+	
+	public boolean addMenuButton(GuideMenuButton button) {
+		if (heigth < getInternalNextButtonY() + button.height) {
+			System.out.println("Could not fit button " + button.getToken() + " onto menu " + this.identifier + "(MaxY: " + this.heigth + ",buttonY: " + this.heigth + ")");
 			return false;
 		}
+		buttons.add(button);
+		return true;
+	}
+	
+	protected int getInternalNextButtonY() {
+		int y = 0;
+		for (GuiButton button : buttons) {
+			if (button instanceof GuideMenuButton) {
+				y += button.height + lineSpacing;
+			}
+		}
+		return y;
 	}
 	
 	public void open(GuiGuide parent) {

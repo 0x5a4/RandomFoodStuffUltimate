@@ -18,7 +18,7 @@ public class GuiCookingPot extends GuiContainer {
 		super(new ContainerCookingPot(entity));
 		this.entity = entity;
 		
-		this.xSize = 204;
+		this.xSize = 244;
 		this.ySize = 100;
 	}
 	
