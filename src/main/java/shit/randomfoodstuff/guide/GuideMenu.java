@@ -1,18 +1,15 @@
 package shit.randomfoodstuff.guide;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
-import net.minecraft.world.biome.BiomeGenBase.Height;
 import shit.randomfoodstuff.client.gui.Buttons;
-import shit.randomfoodstuff.client.gui.GuiGuide;
 import shit.randomfoodstuff.client.gui.Buttons.GuideMenuButton;
+import shit.randomfoodstuff.client.gui.GuiGuide;
 
 @SideOnly(Side.CLIENT)
 public abstract class GuideMenu {
@@ -44,7 +41,6 @@ public abstract class GuideMenu {
 	public boolean addMenuButton(GuideMenuButton button) {
 		if (heigth < getInternalNextButtonY() + button.height) {
 			System.out.println("Could not fit button " + button.getToken() + " onto menu " + this.identifier + "(MaxY: " + this.heigth + ",buttonY: " + this.heigth + ")");
-			return false;
 		}
 		buttons.add(button);
 		return true;

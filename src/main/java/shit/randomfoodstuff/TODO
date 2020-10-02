@@ -7,7 +7,6 @@ QUALITY OF LIFE
     -More Tooltips
     -Rewrite/Think Effect System
         -Special Items when using certain item combos
-        -More Tooltip Space in Cooking Pot GUI
 -Food Rebalance!!!!!
 -Guide
     -Add All Articles
@@ -16,16 +15,11 @@ QUALITY OF LIFE
     -Make some classes more Accessible
     -Rework page system? (Kinda unnecessary)
         -Custom Buttons at right side
--Bob The Benni
-    -Crafting
 -All Potions under 1 ID
--Awfull Looking Block 
-    -Troll Waila
 -Pepperoni own DamageSource
 -Extend Config
 -Model System
     -Automatic Rotation(Impossible without very complicated Math?)
--Server/Client Side Check(@SideOnly)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 NEUE MECHANICS
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

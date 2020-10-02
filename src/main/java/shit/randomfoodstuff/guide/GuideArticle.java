@@ -16,6 +16,9 @@ import shit.randomfoodstuff.util.ColorHelper;
 @SideOnly(Side.CLIENT)
 public abstract class GuideArticle {
 	
+	public static final int defaultWidth = 153;
+	public static final int defaultHeight = 155;
+	
 	protected ArrayList<GuideTextPage> textPages = new ArrayList<GuideTextPage>();
 	protected ArrayList<GuideRecipePage> recipePages = new ArrayList<GuideRecipePage>();
 	
@@ -31,8 +34,8 @@ public abstract class GuideArticle {
 	
 	public int xPosition = 79;
 	public int yPosition = 14 + GuideFormatter.FONT_HEIGHT;
-	public int width = 153;
-	public int heigth = 155;
+	public int width = defaultWidth;
+	public int heigth = defaultHeight;
 	
 	public GuideArticle() {
 		this.formatter = new GuideFormatter(this);

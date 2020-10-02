@@ -8,6 +8,7 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import shit.randomfoodstuff.Reference;
+import shit.randomfoodstuff.guide.GuideArticle;
 import shit.randomfoodstuff.guide.GuideFormatter;
 import shit.randomfoodstuff.guide.GuideMenu;
 import shit.randomfoodstuff.util.ColorHelper;
@@ -25,7 +26,7 @@ public class Buttons extends GuiButton {
 		protected String token;
 		protected String caption;
 		protected boolean isArticleButton;
-		protected ResourceLocation texture;
+		protected ResourceLocation buttonTexture;
 		protected int textureX;
 		protected int textureY;
 		protected int captionX = -1;
@@ -52,7 +53,7 @@ public class Buttons extends GuiButton {
 			this.isArticleButton = isArticleButton;
 			this.height = height;
 			this.width = width;
-			this.texture = texture;
+			this.buttonTexture = texture;
 			this.textureX = textureX;
 			this.textureY = textureY;
 			this.captionX = captionX;
@@ -71,8 +72,8 @@ public class Buttons extends GuiButton {
 		public void drawButton(Minecraft mc, int x, int y) {
 			if (visible) {
 				FontRenderer fontRenderer = mc.fontRenderer;
-				if (texture != null) {
-					mc.getTextureManager().bindTexture(texture);
+				if (buttonTexture != null) {
+					mc.getTextureManager().bindTexture(buttonTexture);
 					drawTexturedModalRect(this.xPosition, this.yPosition, this.textureX, this.textureY, this.width, this.height);
 					if (caption != null) {
 						if (captionX < 0 || captionY < 0) {
@@ -83,8 +84,6 @@ public class Buttons extends GuiButton {
 							fontRenderer.drawString(caption, captionX, captionY, 4210752);
 						}
 					}
-				} else if (caption != null) {
-					fontRenderer.drawString(caption, this.xPosition, this.yPosition, 4210752);
 				}
 			}
 		}
