@@ -1,5 +1,6 @@
 package shit.randomfoodstuff;
 
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.util.IChatComponent;
 
 public interface IProxy {
@@ -16,6 +17,6 @@ public interface IProxy {
 
 	void fakeDisconnect(String msg, IChatComponent reason);
 	
-	void checkSide();
+	Side getSide();
 	
 }

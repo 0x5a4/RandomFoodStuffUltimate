@@ -112,7 +112,6 @@ public class RFMain {
 	public void postInit(FMLPostInitializationEvent event) {
 		RandomAchievements.register();
 		proxy.registerGuide();
-		proxy.checkSide();
 	}
 	
 	public static boolean isClientSide() {

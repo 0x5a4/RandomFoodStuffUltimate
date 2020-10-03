@@ -64,6 +64,10 @@ public class Buttons extends GuiButton {
 			this(id, x, y, token, caption, -1, -1, isArticleButton, texture, textureX, textureY, width, height);
 		}
 
+		public GuideMenuButton(int id, int x, int y, String token, String caption, int captionX, int captionY, boolean isArticleButton, int width, int height) {
+			this(id, x, y, token, caption, captionX, captionY, isArticleButton, null, 0, 0, width, height);
+		}
+		
 		public GuideMenuButton(int id, int x, int y, String token, String caption, boolean isArticleButton) {
 			this(id, x, y, token, caption, isArticleButton, null, 0, 0, GuideMenu.defaultWidth, GuideFormatter.FONT_HEIGHT);
 		}
@@ -83,6 +87,14 @@ public class Buttons extends GuiButton {
 						} else {
 							fontRenderer.drawString(caption, captionX, captionY, 4210752);
 						}
+					}
+				} else {
+					if (captionX < 0 || captionY < 0) {
+						int textX = this.xPosition + (this.width / 2 - fontRenderer.getStringWidth(caption) / 2);
+						int textY = this.yPosition + (this.height / 2 - fontRenderer.FONT_HEIGHT);
+						fontRenderer.drawString(caption, textX, textY, 4210752);
+					} else {
+						fontRenderer.drawString(caption, captionX, captionY, 4210752);
 					}
 				}
 			}

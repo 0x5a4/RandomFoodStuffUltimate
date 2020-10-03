@@ -18,6 +18,7 @@ public abstract class GuideMenu {
 	public static final int defaultHeight = 155;
 	
 	private ArrayList<GuiButton> buttons = new ArrayList<GuiButton>();
+	protected ArrayList<GuideMenuPage> pages = new ArrayList<GuideMenuPage>();
 	protected String heading;
 	protected String identifier = null;
 	protected GuiGuide parent;
@@ -27,33 +28,67 @@ public abstract class GuideMenu {
 	public int width = defaultWidth;
 	public int heigth = defaultHeight;
 	protected int lineSpacing = 5;
+	protected int index = 0;
 	
 	public abstract void init();
 	
-	public boolean addMenuButton(String token, String caption, boolean isArticleButton) {
-		return addMenuButton(new GuideMenuButton(parent.getUniqueButtonID(), this.x + parent.getXOffset(), y + parent.getYOffset() + getInternalNextButtonY(), token, caption, isArticleButton));
+	public void addMenuButton(String token, String caption, int captionX, int captionY, boolean isArticleButton, ResourceLocation texture, int textureX, int textureY, int width, int height) {
+		GuideMenuPage page = getNextMenuPage(height);
+		page.addButton(new GuideMenuButton(parent.getUniqueButtonID(), parent.getXOffset() + this.x, parent.getYOffset() + this.y + page.getInternalNextButtonY(lineSpacing), token, caption, captionX, captionY, isArticleButton, texture, textureX, textureY, width, height));
 	}
 	
-	public boolean addMenuButton(String token, String caption, boolean isArticleButton, ResourceLocation texture, int textureX, int textureY, int width, int height) {
-		return addMenuButton(new GuideMenuButton(parent.getUniqueButtonID(), this.x + parent.getXOffset(), y + parent.getYOffset() + getInternalNextButtonY(), token, caption, isArticleButton, texture, textureX, textureY, width, height));
+	public void addMenuButton(String token, String caption, int captionX, int captionY, boolean isArticleButton, int width, int height) {
+		addMenuButton(token, caption, captionX, captionY, isArticleButton, null, 0, 0, width, height);
 	}
 	
-	public boolean addMenuButton(GuideMenuButton button) {
-		if (heigth < getInternalNextButtonY() + button.height) {
-			System.out.println("Could not fit button " + button.getToken() + " onto menu " + this.identifier + "(MaxY: " + this.heigth + ",buttonY: " + this.heigth + ")");
-		}
-		buttons.add(button);
-		return true;
+	public void addMenuButton(String token, String caption, boolean isArticleButton, ResourceLocation texture, int textureX, int textureY, int width, int height) {
+		addMenuButton(token, caption, -1, -1, isArticleButton, texture, textureX, textureY, width, height);
 	}
 	
-	protected int getInternalNextButtonY() {
-		int y = 0;
-		for (GuiButton button : buttons) {
-			if (button instanceof GuideMenuButton) {
-				y += button.height + lineSpacing;
+	public void addMenuButton(String token, String caption, boolean isArticleButton) {
+		GuideMenuPage page = getNextMenuPage(GuideFormatter.FONT_HEIGHT);
+		page.addButton(new GuideMenuButton(parent.getUniqueButtonID(), parent.getXOffset() + this.x, parent.getYOffset() + this.y + page.getInternalNextButtonY(lineSpacing), token, caption, isArticleButton));
+	}
+	
+	public void addMenuButton(GuideMenuButton button) {
+		getNextMenuPage(button.height).addButton(button);
+	}
+	
+	public GuideMenuPage getNextMenuPage(int buttonHeight) {
+		for (GuideMenuPage page : pages) {
+			if (page.canAddButton(buttonHeight, this.heigth, this.lineSpacing)) {
+				return page;
 			}
 		}
-		return y;
+		
+		GuideMenuPage page = new GuideMenuPage();
+		pages.add(page);
+		return page;
+	}
+	
+	public void next() {
+		if (hasNext()) {
+			index++;
+		}
+	}
+	
+	public void prev() {
+		if (hasPrev()) {
+			index--;
+		}
+	}
+	
+	public GuideMenuPage getCurrentPage() {
+		if (pages.size() == 0) return null;
+		return pages.get(this.index);
+	}
+	
+	public boolean hasNext() {
+		return index < pages.size() - 1;
+	}
+	
+	public boolean hasPrev() {
+		return index > 0;
 	}
 	
 	public void open(GuiGuide parent) {
@@ -64,6 +99,7 @@ public abstract class GuideMenu {
 	
 	public void close() {
 		buttons.clear();
+		pages.clear();
 		this.parent = null;
 	}
 	

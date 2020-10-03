@@ -1,8 +1,7 @@
 package shit.randomfoodstuff;
 
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.util.IChatComponent;
-import net.minecraftforge.common.MinecraftForge;
-import shit.randomfoodstuff.event.handler.ScytheHandler;
 
 public class CommonProxy implements IProxy {
 	
@@ -25,7 +24,7 @@ public class CommonProxy implements IProxy {
 	public void registerGuide() {}
 
 	@Override
-	public void checkSide() {
-		System.out.println("Server");
+	public Side getSide() {
+		return Side.SERVER;
 	}
 }

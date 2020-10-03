@@ -1,6 +1,7 @@
 package shit.randomfoodstuff;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -116,7 +117,6 @@ public class ClientProxy implements IProxy {
 	
 	@Override
 	public void openGuideGui() {
-		System.out.println("Opening GUI");
 		Minecraft.getMinecraft().displayGuiScreen(new GuiGuide());
 	}
 	
@@ -126,8 +126,8 @@ public class ClientProxy implements IProxy {
 	}
 
 	@Override
-	public void checkSide() {
-		System.out.println("Client");
+	public Side getSide() {
+		return Side.CLIENT;
 	}
 	
 	

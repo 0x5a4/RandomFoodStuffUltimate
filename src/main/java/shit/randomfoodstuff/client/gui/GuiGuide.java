@@ -2,22 +2,18 @@ package shit.randomfoodstuff.client.gui;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.util.ResourceLocation;
 import shit.randomfoodstuff.Reference;
-import shit.randomfoodstuff.client.gui.Buttons.ButtonCrafting;
-import shit.randomfoodstuff.client.gui.Buttons.ButtonHome;
-import shit.randomfoodstuff.client.gui.Buttons.ButtonPageSwitch;
 import shit.randomfoodstuff.guide.GuideArticle;
 import shit.randomfoodstuff.guide.GuideMenu;
+import shit.randomfoodstuff.guide.GuideMenuPage;
 import shit.randomfoodstuff.guide.GuideRegistry;
 
 @SideOnly(Side.CLIENT)
@@ -35,11 +31,12 @@ public class GuiGuide extends GuiScreen {
 	private int nextButtonID = 0;
 	
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void initGui() {
 		buttonList.clear();
 		this.nextButtonID = 0;
 		Keyboard.enableRepeatEvents(true);
+		addButtons();
+		buttonCrafting.visible = false;
 		
 		if (GuideRegistry.doesMenuExist(GuideRegistry.getDefaultMenu())) {
 			openMenu(GuideRegistry.getMenuByName(GuideRegistry.getDefaultMenu()));
@@ -47,7 +44,6 @@ public class GuiGuide extends GuiScreen {
 	}
 	
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void updateScreen() {
 		try {
 			if (article != null) {
@@ -59,10 +55,10 @@ public class GuiGuide extends GuiScreen {
 				}
 				buttonNext.visible = article.hasNext();
 				buttonPrev.visible = article.hasPrev();
-			} else {
+			} else if (menu != null) {
 				buttonCrafting.visible = false;
-				buttonNext.visible = false;
-				buttonPrev.visible = false;
+				buttonNext.visible = menu.hasNext();
+				buttonPrev.visible = menu.hasPrev();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -70,7 +66,6 @@ public class GuiGuide extends GuiScreen {
 	}
 	
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void drawScreen(int par1, int par2, float par3) {
 		try {
 			drawDefaultBackground();
@@ -106,9 +101,17 @@ public class GuiGuide extends GuiScreen {
 	@Override
 	protected void actionPerformed(GuiButton button) {
 		if (button == buttonNext) {
-			article.next();
+			if (article != null) {
+				article.next();
+			} else if (menu != null) {
+				menu.next();
+			}
 		} else if (button == buttonPrev) {
-			article.prev();
+			if (article != null) {
+				article.prev();
+			} else if (menu != null) {
+				menu.prev();
+			}
 		} else if (button == buttonMenu) {
 			if (GuideRegistry.doesMenuExist(GuideRegistry.getDefaultMenu())) {
 				this.openMenu(GuideRegistry.getMenuByName(GuideRegistry.getDefaultMenu()));
@@ -121,6 +124,16 @@ public class GuiGuide extends GuiScreen {
 			}
 		} else if (menu != null) {
 			menu.actionPerformed(button);
+		}
+		
+		if (menu != null) {
+			this.buttonList.clear();
+			this.addButtons();
+			this.buttonList.addAll(menu.getButtons());
+			GuideMenuPage menuPage = menu.getCurrentPage();
+			if (menuPage != null) {
+				this.buttonList.addAll(menuPage.getMenuButtons());
+			}
 		}
 	}
 	
@@ -156,6 +169,10 @@ public class GuiGuide extends GuiScreen {
 		this.buttonList.clear();
 		this.addButtons();
 		this.buttonList.addAll(menu.getButtons());
+		GuideMenuPage menuPage = menu.getCurrentPage();
+		if (menuPage != null) {
+			this.buttonList.addAll(menuPage.getMenuButtons());
+		}
 	}
 	
 	public void addButtons() {
