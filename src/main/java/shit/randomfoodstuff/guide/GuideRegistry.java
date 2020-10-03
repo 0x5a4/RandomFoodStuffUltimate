@@ -5,63 +5,51 @@ import java.util.HashMap;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.TextureMap;
 import shit.randomfoodstuff.guide.recipes.IRecipeDiscoverer;
 
-//Rework
 @SideOnly(Side.CLIENT)
 public class GuideRegistry {
 	
-	private static HashMap<String, GuideArticle> articleList = new HashMap<String, GuideArticle>();
-	private static HashMap<String, GuideMenu> menuList = new HashMap<String, GuideMenu>();
+	private static HashMap<String, GuideTab> tabList = new HashMap<String, GuideTab>();
 	
-	private static ArrayList<IRecipeDiscoverer> recipeDiscovererList = new ArrayList<IRecipeDiscoverer>();
+	//The Default Guide Tab that is opened when the GuideGui opens and when the Home Button is pressed
+	public static String defaultGuideTab = "HOME";
 	
-	private static String defaultMenu = "mainMenu";
-	
-	public static void addGuideArticle(String identifier, GuideArticle entry) {
-		entry.setIdentifier(identifier);
-		articleList.put(identifier, entry);
+	public static void registerTab(String name, GuideTab tab) {
+		if (doesTabExist(name)) {
+			System.err.println("Tab already exists: " + name);
+			return;
+		}
+
+		if (tab.getName() == null) {
+			tab.setName(name);
+		}
+		
+		if (!tab.getName().equals(name)) {
+			System.err.printf("Bruteforcing name override for tab %s due to Normalization and keeping Things consistent Reasons", tab.getClass().getName());
+			System.err.println("Insead using: " + name);
+			tab.setName(name);
+		}
+		
+		tabList.put(name, tab);
 	}
 	
-	public static void addMenu(String identifier, GuideMenu menu) {
-		menu.setIdentifier(identifier);
-		menuList.put(identifier, menu);
+	public static void registerPageToTab(String tabName, String pageName, Class<? extends GuidePage> pageClass) {
+		if (!doesTabExist(tabName)) {
+			System.out.println("No such Tab: " + tabName);
+			return;
+		}
+		
+		getTab(tabName).registerPage(pageName, pageClass);
 	}
 	
-	/**
-	 * Make sure you have all registered before the Articles load. 
-	 * Doing afterwards will result in the discoverer not being taken into account
-	 */
-	public static void registerRecipeDiscoverer(IRecipeDiscoverer discoverer) {
-		recipeDiscovererList.add(discoverer);
+	public static GuideTab getTab(String name) {
+		return tabList.get(name);
 	}
 	
-	public static GuideArticle getArticleByName(String identifier) {
-		return articleList.getOrDefault(identifier, null);
-	}
-	
-	public static GuideMenu getMenuByName(String identifier) {
-		return menuList.getOrDefault(identifier, null);
-	}
-	
-	public static ArrayList<IRecipeDiscoverer> getRecipeDiscovererList() {
-		return recipeDiscovererList;
-	}
-	
-	public static boolean doesArticleExist(String identifier) {
-		return articleList.containsKey(identifier);
-	}
-	
-	public static boolean doesMenuExist(String identifier) {
-		return menuList.containsKey(identifier);
-	}
-	
-	public static void setDefaultMenu(String defaultMenu) {
-		GuideRegistry.defaultMenu = defaultMenu;
-	}
-	
-	public static String getDefaultMenu() {
-		return defaultMenu;
+	public static boolean doesTabExist(String name) {
+		return tabList.containsKey(name);
 	}
 	
 	
