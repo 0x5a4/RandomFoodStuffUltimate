@@ -1,5 +1,7 @@
 package shit.randomfoodstuff.client.gui;
 
+import java.util.List;
+
 import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.relauncher.Side;
@@ -65,11 +67,19 @@ public class GuiGuide extends GuiScreen {
 		
 	}
 	
-	public void addButtons() {
+	public void addDefaultButtons() {
 		buttonList.add(buttonNext = new Buttons.ButtonPageSwitch(getUniqueButtonID(), getXOffset() + 214,  getYOffset() + 174, true));
 		buttonList.add(buttonPrev = new Buttons.ButtonPageSwitch(getUniqueButtonID(), getXOffset() + 79, getYOffset() + 174, false));
 		buttonList.add(buttonMenu = new Buttons.ButtonHome(getUniqueButtonID(), getXOffset() + 62 , getYOffset() + 6));
 		buttonList.add(buttonCrafting = new Buttons.ButtonCrafting(getUniqueButtonID(), getXOffset() + 239, getYOffset() + 4));
+	}
+	
+	public void addButtonsToList(List<GuiButton> buttonList, boolean clear) {
+		if (clear) {
+			this.buttonList.clear();
+			this.addDefaultButtons();
+		}
+		this.buttonList.addAll(buttonList);
 	}
 	
 	public void drawCenteredOffsetString(String s, int centerX, int centerY, int color) {
@@ -90,11 +100,7 @@ public class GuiGuide extends GuiScreen {
 	//Setters
 	
 	//Getters
-	public int getUniqueButtonID() {
-		int i = nextButtonID;
-		nextButtonID++;
-		return i;
-	}
+	
 	
 	public int getXOffset() {
 		return (this.width - textureWidth) / 2 - 32;
