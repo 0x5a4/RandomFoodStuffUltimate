@@ -20,7 +20,7 @@ public class ConfigHandler {
 	
 	//Items Vars
 	public static int bobTheBenniMaxUses = 100;
-	public static float bobTheBenniConvertRate = 1;
+	public static float bobTheBenniConvertRate = 0.5F;
 
 	
 	public static void init(File configFile) {

@@ -17,6 +17,10 @@ import shit.randomfoodstuff.event.handler.ClientEventHandler;
 import shit.randomfoodstuff.guide.GuideRegistry;
 import shit.randomfoodstuff.guide.SimpleGuideArticle;
 import shit.randomfoodstuff.guide.content.GuideMainMenu;
+import shit.randomfoodstuff.guide.content.GuideMenuBlocks;
+import shit.randomfoodstuff.guide.content.GuideMenuCooking;
+import shit.randomfoodstuff.guide.content.GuideMenuItems;
+import shit.randomfoodstuff.guide.content.GuideMenuSchnitzel;
 import shit.randomfoodstuff.guide.recipes.CraftingRecipeDiscoverer;
 import shit.randomfoodstuff.guide.recipes.FurnaceRecipeDiscoverer;
 import shit.randomfoodstuff.render.RandomItemRenderer;
@@ -104,15 +108,31 @@ public class ClientProxy implements IProxy {
 		
 		//Articles
 		System.out.println("Adding Guide Articles");
-		GuideRegistry.addGuideArticle("soupLadle", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemSoupLadle)));
-		GuideRegistry.addGuideArticle("baguette", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemMagicBaguette)));
-		GuideRegistry.addGuideArticle("fatInfuser", new SimpleGuideArticle());
-		GuideRegistry.addGuideArticle("awfulBlock", new SimpleGuideArticle());
-		GuideRegistry.addGuideArticle("drinks", new SimpleGuideArticle());
-		GuideRegistry.addGuideArticle("backpack", new SimpleGuideArticle());
+		
+		//Items
+		GuideRegistry.addGuideArticle("items.benni", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemBenni)).addRecipes(new ItemStack(RandomItems.itemBenni, 1, 1)).addRecipes(new ItemStack(RandomItems.itemBenni, 1, 2)).addRecipes(new ItemStack(RandomItems.itemBobTheBenni)));
+		GuideRegistry.addGuideArticle("items.arthur", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemArthur)).addRecipes(new ItemStack(RandomItems.itemArthur, 1, 1)));
+		GuideRegistry.addGuideArticle("items.drinks", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemDrink)).addRecipes(new ItemStack(RandomItems.itemDrink, 1, 1)).addRecipes(new ItemStack(RandomItems.itemDrink, 1, 2)).addRecipes(new ItemStack(RandomItems.itemDrink, 1, 3)).addRecipes(new ItemStack(RandomItems.itemDrink, 1, 4)));
+		GuideRegistry.addGuideArticle("items.baguette", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemMagicBaguette)));
+		GuideRegistry.addGuideArticle("items.lauch", new SimpleGuideArticle());
+		//Schnitzel
+		GuideRegistry.addGuideArticle("items.schnitzel.schnitzel", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemWarpingSchnitzel)).addRecipes(new ItemStack(RandomItems.itemFlyingSchnitzel)).addRecipes(new ItemStack(RandomItems.itemSchnitzel)).addRecipes(new ItemStack(RandomItems.itemSchnitzel, 1, 1)).addRecipes(new ItemStack(RandomItems.itemSchnitzel, 1, 2)));
+		GuideRegistry.addGuideArticle("items.schnitzel.backpack", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemSchnitzelBackpack)));
+		
+		//Blocks
+		GuideRegistry.addGuideArticle("blocks.fatInfuser", new SimpleGuideArticle().addRecipes(new ItemStack(RandomBlocks.blockFatInfuser)).addRecipes(new ItemStack(RandomItems.itemFat)));
+		GuideRegistry.addGuideArticle("blocks.awfull", new SimpleGuideArticle().addRecipes(new ItemStack(RandomBlocks.blockAwfull)).addRecipes(new ItemStack(RandomItems.itemAwfullBreaker)));
+		
+		//Cooking
+		GuideRegistry.addGuideArticle("cooking.cookingPot", new SimpleGuideArticle().addRecipes(new ItemStack(RandomBlocks.blockCookingPot)));
+		GuideRegistry.addGuideArticle("cooking.soupLadle", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemSoupLadle)));
 		
 		//Menus
 		GuideRegistry.addMenu("mainMenu", new GuideMainMenu());
+		GuideRegistry.addMenu("items", new GuideMenuItems());
+		GuideRegistry.addMenu("cooking", new GuideMenuCooking());
+		GuideRegistry.addMenu("blocks", new GuideMenuBlocks());
+		GuideRegistry.addMenu("items.schnitzel", new GuideMenuSchnitzel());
 	}
 	
 	@Override

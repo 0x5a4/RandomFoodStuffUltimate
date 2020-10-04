@@ -19,7 +19,6 @@ public class FurnaceRecipeDiscoverer implements IRecipeDiscoverer {
 				}
 			}
 		}
-		System.out.println("Found " + result.size() + " Smelting Recipes for " + stack.getUnlocalizedName());
 		return result;
 	}
 

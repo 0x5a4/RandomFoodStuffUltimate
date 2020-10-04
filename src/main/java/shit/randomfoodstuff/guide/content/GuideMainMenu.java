@@ -10,12 +10,9 @@ public class GuideMainMenu extends GuideMenu {
 
 	@Override
 	public void init() {
-		addMenuButton("soupLadle", "Soup Ladle", true, Buttons.defaulttexture, 0, 42, 153, 33);
-		addMenuButton("baguette", "Baguette Magique", true);
-		addMenuButton("fatInfuser", "Fat Infuser", true);
-		addMenuButton("awfulBlock", "Awfull looking Block", true);
-		addMenuButton("drinks", "Drinks", true);
-		addMenuButton("backpack", "Schnitzel Backpack", true);
+		addMenuButton("cooking", "Cooking", 10, 7, false, Buttons.defaulttexture, 0, 39, 149, 23);
+		addMenuButton("items", "Items", 10, 7, false, Buttons.defaulttexture, 0, 39, 149, 23);
+		addMenuButton("blocks", "Blocks", 10, 7, false, Buttons.defaulttexture, 0, 39, 149, 23);
 	}
 
 }

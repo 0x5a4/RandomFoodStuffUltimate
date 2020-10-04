@@ -5,6 +5,8 @@ import org.lwjgl.opengl.GL11;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.renderer.OpenGlHelper;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import shit.randomfoodstuff.Reference;
@@ -77,12 +79,16 @@ public class Buttons extends GuiButton {
 			if (visible) {
 				FontRenderer fontRenderer = mc.fontRenderer;
 				if (buttonTexture != null) {
-					mc.getTextureManager().bindTexture(buttonTexture);
-					drawTexturedModalRect(this.xPosition, this.yPosition, this.textureX, this.textureY, this.width, this.height);
 					if (caption != null) {
+						mc.getTextureManager().bindTexture(buttonTexture);
+						GL11.glColor4f(1, 1, 1, 1);
+						GL11.glEnable(GL11.GL_BLEND);
+			            OpenGlHelper.glBlendFunc(770, 771, 1, 0);
+			            GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+						drawTexturedModalRect(this.xPosition, this.yPosition, this.textureX, this.textureY, this.width, this.height);
 						if (captionX < 0 || captionY < 0) {
 							int textX = this.xPosition + (this.width / 2 - fontRenderer.getStringWidth(caption) / 2);
-							int textY = this.yPosition + (this.height / 2 - fontRenderer.FONT_HEIGHT);
+							int textY = this.yPosition + (this.height / 2 - fontRenderer.FONT_HEIGHT / 2);
 							fontRenderer.drawString(caption, textX, textY, 4210752);
 						} else {
 							fontRenderer.drawString(caption, captionX, captionY, 4210752);
@@ -90,9 +96,7 @@ public class Buttons extends GuiButton {
 					}
 				} else {
 					if (captionX < 0 || captionY < 0) {
-						int textX = this.xPosition + (this.width / 2 - fontRenderer.getStringWidth(caption) / 2);
-						int textY = this.yPosition + (this.height / 2 - fontRenderer.FONT_HEIGHT);
-						fontRenderer.drawString(caption, textX, textY, 4210752);
+						fontRenderer.drawString(caption, this.xPosition, this.yPosition, 4210752);
 					} else {
 						fontRenderer.drawString(caption, captionX, captionY, 4210752);
 					}

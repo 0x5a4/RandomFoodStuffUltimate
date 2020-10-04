@@ -44,7 +44,7 @@ public class RandomCraftingHandler {
 		GameRegistry.addShapelessRecipe(new ItemStack(itemSchokoriegel, 3), new ItemStack(Items.dye, 1, 3), new ItemStack(Items.milk_bucket), new ItemStack(Items.dye, 1, 3));
 		GameRegistry.addShapelessRecipe(new ItemStack(itemArthur, 1, 0), new ItemStack(itemFat), new ItemStack(itemMagicBaguette), new ItemStack(itemLauch), new ItemStack(itemSchnitzel));
 		GameRegistry.addShapedRecipe(new ItemStack(itemIceCube), " S ", "SIS", " S ", Character.valueOf('S'), Items.snowball, Character.valueOf('I'), Blocks.ice);
-		GameRegistry.addShapedRecipe(new ItemStack(blockAwfull, 16), "LDL", "LDL", "DDD", Character.valueOf('L'), itemLauch, Character.valueOf('D'), Blocks.dirt);
+		GameRegistry.addShapedRecipe(new ItemStack(blockAwfull, 4), "LDL", "LDL", "DDD", Character.valueOf('L'), itemLauch, Character.valueOf('D'), Blocks.dirt);
 		GameRegistry.addShapedRecipe(new ItemStack(blockFatInfuser), "FAF", "HLH" , "PPP", Character.valueOf('F'), itemFat, Character.valueOf('A'), Blocks.furnace, Character.valueOf('H'), Item.getItemFromBlock(Blocks.hopper), Character.valueOf('L'), Items.lava_bucket, Character.valueOf('P'), Blocks.wooden_pressure_plate);
 		GameRegistry.addShapedRecipe(new ItemStack(blockCookingPot), " F ", "ICI", "IDI", Character.valueOf('I'), Items.iron_ingot, Character.valueOf('C'), Item.getItemById(380), Character.valueOf('D'), Blocks.gold_block, Character.valueOf('F'), blockFatInfuser);
 		GameRegistry.addShapelessRecipe(new ItemStack(itemClubMate), Items.glass_bottle, itemMateTee, itemMateTee);

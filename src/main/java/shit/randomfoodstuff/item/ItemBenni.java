@@ -73,9 +73,12 @@ public class ItemBenni extends ItemFood implements ISpecialFood{
 	protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
 		switch(stack.getItemDamage()) {
 		case 0:
-			ItemHelper.addFoodStats(player, 1, ItemHelper.getSaturationAmplifier(1, 1)); break;
+			ItemHelper.addFoodStats(player, 1, ItemHelper.getSaturationAmplifier(1, 1)); 
+			break;
 		case 1:
-			ItemHelper.addFoodStats(player, 5, ItemHelper.getSaturationAmplifier(5, 3)); break;
+			ItemHelper.addFoodStats(player, 5, ItemHelper.getSaturationAmplifier(5, 3));
+			player.heal(4F);
+			break;
 		case 2:
 			ItemHelper.addFoodStats(player, 8, ItemHelper.getSaturationAmplifier(8, 6));
 			player.removePotionEffect(RFPotion.potionLauch.id);

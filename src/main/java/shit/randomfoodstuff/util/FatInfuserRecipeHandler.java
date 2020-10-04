@@ -58,7 +58,6 @@ public class FatInfuserRecipeHandler implements IRecipeDiscoverer{
 				result.add(recipe);
 			}
 		}
-		System.out.println("Found " + result.size() + " Fat Infuser Recipes for " + stack.getUnlocalizedName());
 		return result;
 	}
 	

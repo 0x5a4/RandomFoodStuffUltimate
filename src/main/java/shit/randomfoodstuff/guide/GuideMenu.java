@@ -34,11 +34,17 @@ public abstract class GuideMenu {
 	
 	public void addMenuButton(String token, String caption, int captionX, int captionY, boolean isArticleButton, ResourceLocation texture, int textureX, int textureY, int width, int height) {
 		GuideMenuPage page = getNextMenuPage(height);
-		page.addButton(new GuideMenuButton(parent.getUniqueButtonID(), parent.getXOffset() + this.x, parent.getYOffset() + this.y + page.getInternalNextButtonY(lineSpacing), token, caption, captionX, captionY, isArticleButton, texture, textureX, textureY, width, height));
+		int cx = captionX;
+		int cy = captionY;
+		if (cx > 0 && cy > 0) {
+			cx += parent.getXOffset() + this.x;
+			cy += parent.getYOffset() + this.y + page.getInternalNextButtonY(lineSpacing);
+		}
+		page.addButton(new GuideMenuButton(parent.getUniqueButtonID(), parent.getXOffset() + this.x, parent.getYOffset() + this.y + page.getInternalNextButtonY(lineSpacing), token, caption, cx, cy, isArticleButton, texture, textureX, textureY, width, height));
 	}
 	
 	public void addMenuButton(String token, String caption, int captionX, int captionY, boolean isArticleButton, int width, int height) {
-		addMenuButton(token, caption, captionX, captionY, isArticleButton, null, 0, 0, width, height);
+		addMenuButton(token, caption, captionX, captionY , isArticleButton, null, 0, 0, width, height);
 	}
 	
 	public void addMenuButton(String token, String caption, boolean isArticleButton, ResourceLocation texture, int textureX, int textureY, int width, int height) {

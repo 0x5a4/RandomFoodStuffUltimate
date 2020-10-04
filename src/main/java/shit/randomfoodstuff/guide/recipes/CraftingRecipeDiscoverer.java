@@ -24,7 +24,6 @@ public class CraftingRecipeDiscoverer implements IRecipeDiscoverer {
 				}
 			}
 		}
-		System.out.println("Found " + result.size() + " Recipes for " + stack.getUnlocalizedName());
 		return result;
 	}
 
