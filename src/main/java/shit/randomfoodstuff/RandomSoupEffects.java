@@ -33,9 +33,10 @@ public class RandomSoupEffects {
 	private static void registerEffects() {
 		SoupRegistry.registerSoupEffect("awake", new TemplateSoupEffect.Potion("Caffein Overdosed", RFPotion.potionCaffeine.id, DurationHelper.minutesToTicks(10)).setSelfReactionEffect(RFPotion.potionCaffeine.id, DurationHelper.minutesToTicks(15)));
 		SoupRegistry.registerSoupEffect("pepperoni", new TemplateSoupEffect.Potion("SPICEY", RFPotion.potionPepperoni.id, DurationHelper.minutesToTicks(2)).setSelfReactionEffect(RFPotion.potionPepperoni.id, DurationHelper.minutesToTicks(10)).setSelfReactionDisplayName("ARE YOU CRAZY?!"));
-		SoupRegistry.registerSoupEffect("saturation", new TemplateSoupEffect.Potion("*Burp*", 23, DurationHelper.secondsToTicks(30)).setSelfReactionEffect(23, DurationHelper.secondsToTicks(45)));
+		SoupRegistry.registerSoupEffect("saturation", new TemplateSoupEffect.Potion("Well fat", 23, DurationHelper.secondsToTicks(30)).setSelfReactionEffect(23, DurationHelper.secondsToTicks(45)));
 		SoupRegistry.registerSoupEffect("speed", new TemplateSoupEffect.Potion("Speedy Gonzales", Potion.moveSpeed.id, DurationHelper.minutesToTicks(5), 2));
 		SoupRegistry.registerSoupEffect("lauch", new TemplateSoupEffect.Potion("Mathis?", RFPotion.potionLauch.id, DurationHelper.minutesToTicks(3)).setSelfReactionEffect(RFPotion.potionLauch.id, DurationHelper.minutesToTicks(5)));
+		SoupRegistry.registerSoupEffect("floating", new TemplateSoupEffect.Potion("Never gonna let you down", RFPotion.potionFloating.id, DurationHelper.minutesToTicks(1.5F)).setSelfReactionEffect(RFPotion.potionFloating.id, DurationHelper.minutesToTicks(2.5F)));
 		
 		//Moldy
 		SoupRegistry.registerSoupEffect("moldy", new SoupEffect() {

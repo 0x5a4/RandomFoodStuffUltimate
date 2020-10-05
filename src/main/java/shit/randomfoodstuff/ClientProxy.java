@@ -108,7 +108,6 @@ public class ClientProxy implements IProxy {
 		
 		//Articles
 		System.out.println("Adding Guide Articles");
-		
 		//Items
 		GuideRegistry.addGuideArticle("items.benni", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemBenni)).addRecipes(new ItemStack(RandomItems.itemBenni, 1, 1)).addRecipes(new ItemStack(RandomItems.itemBenni, 1, 2)).addRecipes(new ItemStack(RandomItems.itemBobTheBenni)));
 		GuideRegistry.addGuideArticle("items.arthur", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemArthur)).addRecipes(new ItemStack(RandomItems.itemArthur, 1, 1)));

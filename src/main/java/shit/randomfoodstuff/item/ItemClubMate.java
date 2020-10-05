@@ -20,7 +20,7 @@ public class ItemClubMate extends ItemFood implements ISpice{
 		
 		setUnlocalizedName("itemClubMate");
 		setTextureName(Reference.TextureName + "itemClubMate");
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		
 	}
 	

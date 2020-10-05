@@ -23,7 +23,7 @@ public class ItemMagicBaguette extends Item{
 		setTextureName(Reference.TextureName + "itemMagicBaguette");
 		setMaxStackSize(1);
 		setMaxDamage(2);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	@Override

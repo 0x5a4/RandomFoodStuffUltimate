@@ -34,7 +34,7 @@ public class ItemSchnitzelBackpack extends Item implements INotCookable{
 		setTextureName(Reference.TextureName + "itemSchnitzelBackpack");
 		setUnlocalizedName("itemSchnitzelBackpack");
 		setMaxStackSize(1);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	public static String getItemDisplayName(ItemStack stack) {

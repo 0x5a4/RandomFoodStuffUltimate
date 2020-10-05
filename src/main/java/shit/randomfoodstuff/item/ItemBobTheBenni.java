@@ -33,7 +33,7 @@ public class ItemBobTheBenni extends Item {
 		setUnlocalizedName("itemBobTheBenni");
 		setTextureName(Reference.TextureName + "itemBobTheBenniActive");
 		setMaxStackSize(1);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		setHasSubtypes(true);
 	}
 	

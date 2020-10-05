@@ -3,6 +3,7 @@ package shit.randomfoodstuff.event.handler;
 import java.util.HashMap;
 import java.util.Map;
 
+import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
@@ -16,8 +17,11 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
@@ -119,7 +123,17 @@ public class RFEventHandler {
 				}
 			}
 		}
+		
+		if (entity.isPotionActive(RFPotion.potionFloating)) {
+			if (entity.getActivePotionEffect(RFPotion.potionFloating).getDuration() == 0) {
+				entity.removePotionEffect(RFPotion.potionFloating.id);
+			} else {
+				entity.motionY = 0;
+			}
+		}
 	}
+	
+	
 
 	@SubscribeEvent
 	public void onEntityStruckByLighting(EntityStruckByLightningEvent event) {

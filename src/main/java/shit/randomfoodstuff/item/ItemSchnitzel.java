@@ -22,7 +22,7 @@ public class ItemSchnitzel extends ItemFood implements ISchnitzelBackpackable, I
 	public ItemSchnitzel(int healAmount, float saturation) {
 		super(healAmount, saturation, false);
 		
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		setHasSubtypes(true);
 	}
 	

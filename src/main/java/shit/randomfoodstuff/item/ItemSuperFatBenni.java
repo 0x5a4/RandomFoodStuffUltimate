@@ -19,7 +19,7 @@ import shit.randomfoodstuff.util.ItemHelper;
 public class ItemSuperFatBenni extends Item implements ArmourUpgrade, ISpice {
 
 	public ItemSuperFatBenni() {
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		setUnlocalizedName("itemSuperFatBenni");
 		setTextureName(Reference.TextureName + "itemSuperFatBenni");
 		setMaxStackSize(1);

@@ -22,7 +22,7 @@ public class ItemArthur extends ItemFood implements ISpecialFood{
 	public ItemArthur(int healAmount, float saturation) {
 		super(healAmount, saturation, false);
 		
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		setHasSubtypes(true);
 	}
 	

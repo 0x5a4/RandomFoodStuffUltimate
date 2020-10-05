@@ -12,7 +12,7 @@ public class ItemMateTee extends RandomItemSeed {
 		super(plant, soil);
 		setUnlocalizedName("itemMateTee");
 		setTextureName(Reference.TextureName + "itemMateTee");
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 
 }

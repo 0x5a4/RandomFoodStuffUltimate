@@ -32,6 +32,7 @@ item.itemMateTee.name=Mate Tee
 item.itemScythe.name=Scythe
 item.itemCactusGuide.name=Cactus Guide
 item.itemBobTheBenni.name=Bob the Benni
+item.itemFloatingSauce.name=Floating Sauce
 
 //Blocks
 tile.blockLauch.name=Lauch

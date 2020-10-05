@@ -13,6 +13,7 @@ import shit.randomfoodstuff.item.ItemCactusGuide;
 import shit.randomfoodstuff.item.ItemClubMate;
 import shit.randomfoodstuff.item.ItemDrink;
 import shit.randomfoodstuff.item.ItemFat;
+import shit.randomfoodstuff.item.ItemFloatingSauce;
 import shit.randomfoodstuff.item.ItemSuperFatBenni;
 import shit.randomfoodstuff.item.ItemFlyingSchnitzel;
 import shit.randomfoodstuff.item.ItemIceCube;
@@ -60,6 +61,7 @@ public class RandomItems {
 	public static Item itemCactusGuide;
 	public static Item itemBobTheBenni;
 	public static Item itemSuperFatBenni;
+	public static Item itemFloatingSauce;
 	
 	public static void init() {
 		itemFat = new ItemFat();
@@ -75,7 +77,7 @@ public class RandomItems {
 		itemMutantLauch = new ItemMutantLauch(2, ItemHelper.getSaturationAmplifier(2, 1));
 		itemAwfullBreaker = new ItemAwfullBreaker(awfullBreakingMaterial);
 		itemIceCube = new ItemIceCube(0, 0);
-		itemClubMate = new ItemClubMate(6, ItemHelper.getSaturationAmplifier(6, 4));
+		itemClubMate = new ItemClubMate(7, ItemHelper.getSaturationAmplifier(7, 5));
 		itemSchnitzelBackpack = new ItemSchnitzelBackpack();
 		itemSchnitzel = new ItemSchnitzel(0, 0);
 		itemSoup = new ItemSoup();
@@ -86,6 +88,7 @@ public class RandomItems {
 		itemCactusGuide = new ItemCactusGuide();
 		itemBobTheBenni = new ItemBobTheBenni();
 		itemSuperFatBenni = new ItemSuperFatBenni();
+		itemFloatingSauce = new ItemFloatingSauce();
 	}
 	
 	public static void register() {
@@ -113,6 +116,7 @@ public class RandomItems {
 		GameRegistry.registerItem(itemCactusGuide, "itemCactusGuide");
 		GameRegistry.registerItem(itemBobTheBenni, "itemBobTheBenni");
 		GameRegistry.registerItem(itemSuperFatBenni, "itemFatModifiedBenni");
+		GameRegistry.registerItem(itemFloatingSauce, "itemFloatingSauce");
 	}
 	
 }

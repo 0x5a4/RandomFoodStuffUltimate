@@ -31,7 +31,7 @@ public class ItemDrink extends ItemFood {
 		setMaxStackSize(16);
 		setAlwaysEdible();
 		setHasSubtypes(true);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	@Override

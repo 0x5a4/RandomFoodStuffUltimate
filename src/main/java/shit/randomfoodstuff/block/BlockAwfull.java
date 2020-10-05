@@ -36,7 +36,7 @@ public class BlockAwfull extends BlockContainer {
 		setResistance(1000F);
 		setHardness(10);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 
 	@Override

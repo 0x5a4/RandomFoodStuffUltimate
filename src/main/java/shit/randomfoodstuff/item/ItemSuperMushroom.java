@@ -20,7 +20,7 @@ public class ItemSuperMushroom extends ItemFood implements ISpice{
 		setUnlocalizedName("itemSuperMushroom");
 		setTextureName(Reference.TextureName + "itemSuperMushroom");
 		setMaxStackSize(16);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	@Override

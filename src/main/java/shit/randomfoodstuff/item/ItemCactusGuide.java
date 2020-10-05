@@ -16,7 +16,7 @@ public class ItemCactusGuide extends Item{
 		setUnlocalizedName("itemCactusGuide");
 		setTextureName(Reference.TextureName + "itemCactusGuide");
 		setMaxStackSize(1);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	@Override

@@ -27,7 +27,7 @@ public class ItemPepperoni extends RandomFoodSeed implements ISpice {
 		
 		setUnlocalizedName("itemPepperoni");
 		setTextureName(Reference.TextureName + "itemPepperoni");
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		
 	}
 	

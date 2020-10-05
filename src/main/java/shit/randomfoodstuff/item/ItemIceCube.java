@@ -18,7 +18,7 @@ public class ItemIceCube extends ItemFood{
 		setUnlocalizedName("itemIceCube");
 		setTextureName(Reference.TextureName + "itemIceCube");
 		setMaxStackSize(16);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		setPotionEffect(Potion.fireResistance.id, DurationHelper.minutesToSeconds(3), 1, 1.0F);
 	}
 	

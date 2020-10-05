@@ -26,7 +26,7 @@ public class ItemBenni extends ItemFood implements ISpecialFood{
 	public ItemBenni(int healAmount, float saturation) {
 		super(healAmount, saturation, false);
 		
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		setHasSubtypes(true);
 	}
 	

@@ -14,6 +14,8 @@ QUALITY OF LIFE
 -All Potions under 1 ID
 -Pepperoni own DamageSource
 -Extend Config
+-Floating Effect
+    -Texture
 -Model System
     -Automatic Rotation(Impossible without very complicated Math?)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

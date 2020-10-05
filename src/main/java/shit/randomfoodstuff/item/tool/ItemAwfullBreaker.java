@@ -12,7 +12,7 @@ public class ItemAwfullBreaker extends ItemPickaxe implements IAwfullLookingBloc
 		setMaxStackSize(1);
 		setUnlocalizedName("itemAwfullBreaker");
 		setTextureName(Reference.TextureName + "itemAwfullBreaker");
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	

@@ -9,6 +9,6 @@ public class ItemFat extends Item {
 	public ItemFat() {
 		setUnlocalizedName("itemFat");
 		setTextureName(Reference.TextureName + "itemFat");
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 }

@@ -26,7 +26,7 @@ public class BlockFatInfuser extends RandomSpecialRenderedBlock {
 		super(Material.iron);
 		
 		setBlockName("blockFatInfuser");
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		setHardness(10);
 		setHarvestLevel("pickaxe", 1);
 		setStepSound(soundTypeAnvil);

@@ -17,7 +17,7 @@ public class ItemSoupLadle extends Item{
 		setUnlocalizedName("itemSoupLadle");
 		setTextureName(Reference.TextureName + "itemSoupLadle");
 		setMaxStackSize(1);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	@Override

@@ -39,7 +39,7 @@ public class RFMain {
 
 	public static ToolMaterial awfullBreakingMaterial = EnumHelper.addToolMaterial("awfullBreakingMaterial", 1, 3, 200, 0, 0);
 
-	public static CreativeTabs tab = new CreativeTabs("tabrandomfoodstuffultimate") {
+	public static CreativeTabs cTab = new CreativeTabs("tabrandomfoodstuffultimate") {
 
 		@Override
 		public Item getTabIconItem() {

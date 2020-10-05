@@ -31,7 +31,7 @@ public class ItemWarpingSchnitzel extends Item implements ISchnitzelBackpackable
 		setUnlocalizedName("itemWarpingSchnitzel");
 		setTextureName(Reference.TextureName + "itemWarpingSchnitzel");
 		setMaxStackSize(1);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 		setHasSubtypes(true);
 	}
 	

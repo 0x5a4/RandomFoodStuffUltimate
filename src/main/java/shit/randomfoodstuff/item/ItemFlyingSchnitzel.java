@@ -20,7 +20,7 @@ public class ItemFlyingSchnitzel extends ItemFood implements ISchnitzelBackpacka
 		setTextureName(Reference.TextureName + "itemFlyingSchnitzel");
 		setMaxStackSize(8);
 		setAlwaysEdible();
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	@Override

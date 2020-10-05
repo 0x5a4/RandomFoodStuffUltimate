@@ -21,6 +21,7 @@ public class RFPotion extends Potion {
 	public static Potion potionCaffeine;
 	public static Potion potionFlight;
 	public static Potion potionLauch;
+	public static Potion potionFloating;
 	
 	public int iconIndexX;
 	public int iconIndexY;
@@ -54,6 +55,7 @@ public class RFPotion extends Potion {
 		potionCaffeine = new RFPotion(ConfigHandler.potionCaffeine, false).setIconIndex(2, 0).setPotionName("Awake");
 		potionFlight = new RFPotion(ConfigHandler.potionFlight, false).setIconIndex(3, 0).setPotionName("Flight");
 		potionLauch = new RFPotion(ConfigHandler.potionLauch, false).setIconIndex(4, 0).setPotionName("Lauchy");
+		potionFloating = new RFPotion(ConfigHandler.potionFloating, false).setIconIndex(5, 0).setPotionName("Defense");
 	}
 
 }

@@ -17,10 +17,12 @@ public class ConfigHandler {
 	public static int potionCaffeine = 28;
 	public static int potionFlight = 29;
 	public static int potionLauch = 30;
+	public static int potionFloating = 31;
 	
 	//Items Vars
 	public static int bobTheBenniMaxUses = 100;
 	public static float bobTheBenniConvertRate = 0.5F;
+
 
 	
 	public static void init(File configFile) {
@@ -31,11 +33,12 @@ public class ConfigHandler {
 			 config.load();
 			 
 			 //PotionIDs
-			 potionPepperoni = config.get(CATEGORY_POTION_IDS, "potionPepperoni", potionPepperoni).setRequiresMcRestart(true).getInt();
-			 potionMoldy = config.get(CATEGORY_POTION_IDS, "potionMushroom", potionMoldy).setRequiresMcRestart(true).getInt();
-			 potionCaffeine = config.get(CATEGORY_POTION_IDS, "potionAwake", potionCaffeine).setRequiresMcRestart(true).getInt();
-			 potionFlight = config.get(CATEGORY_POTION_IDS, "potionFlight", potionFlight).setRequiresMcRestart(true).getInt();
-			 potionLauch = config.get(CATEGORY_POTION_IDS, "potionLauch", potionLauch).setRequiresMcRestart(true).getInt();
+			 potionPepperoni = config.get(CATEGORY_POTION_IDS, "potionPepperoniID", potionPepperoni).setRequiresMcRestart(true).getInt();
+			 potionMoldy = config.get(CATEGORY_POTION_IDS, "potionMushroomID", potionMoldy).setRequiresMcRestart(true).getInt();
+			 potionCaffeine = config.get(CATEGORY_POTION_IDS, "potionAwakeID", potionCaffeine).setRequiresMcRestart(true).getInt();
+			 potionFlight = config.get(CATEGORY_POTION_IDS, "potionFlightID", potionFlight).setRequiresMcRestart(true).getInt();
+			 potionLauch = config.get(CATEGORY_POTION_IDS, "potionLauchID", potionLauch).setRequiresMcRestart(true).getInt();
+			 potionFloating = config.get(CATEGORY_POTION_IDS, "potionFloatingID", potionFloating).setRequiresMcRestart(true).getInt();
 			 
 			 //Item Vars
 			 bobTheBenniMaxUses = config.getInt("bobTheBenniMaxUses", CATEGORY_ITEMS, bobTheBenniMaxUses, 0, 1000000, "Charge Bob the Benni can store at once");

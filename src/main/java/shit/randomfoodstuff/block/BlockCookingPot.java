@@ -37,7 +37,7 @@ public class BlockCookingPot extends RandomSpecialRenderedBlock {
 		setHardness(3F);
 		setResistance(5F);
 		setStepSound(soundTypeMetal);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	@Override

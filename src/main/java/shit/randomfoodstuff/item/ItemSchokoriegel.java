@@ -15,7 +15,7 @@ public class ItemSchokoriegel extends ItemFood {
 		
 		setUnlocalizedName("itemSchokoriegel");
 		setTextureName(Reference.TextureName + "itemSchokoriegel");
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	@Override

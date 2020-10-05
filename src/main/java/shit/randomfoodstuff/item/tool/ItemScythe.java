@@ -13,7 +13,7 @@ public class ItemScythe extends ItemHoe implements IScythe {
 		setUnlocalizedName("itemScythe");
 		setTextureName(Reference.TextureName + "itemScythe");
 		setMaxStackSize(1);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 
 	@Override

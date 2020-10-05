@@ -21,7 +21,7 @@ public class ItemMutantLauch extends ItemFood implements ISpice{
 		setUnlocalizedName("itemMutantLauch");
 		setTextureName(Reference.TextureName + "itemMutantLauch");
 		setMaxStackSize(16);
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 		
 	@Override

@@ -27,7 +27,7 @@ public class BlockBenni extends RandomSpecialRenderedBlock{
 		setResistance(5F);
 		setHardness(5F);
 		setBlockTextureName(Reference.TextureName + "blockBenni");
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 
 	@Override

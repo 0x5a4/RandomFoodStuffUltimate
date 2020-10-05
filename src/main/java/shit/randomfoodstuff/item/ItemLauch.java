@@ -19,7 +19,7 @@ public class ItemLauch extends RandomFoodSeed {
 		
 		setUnlocalizedName("itemLauch");
 		setTextureName(Reference.TextureName + "itemLauchSeed");
-		setCreativeTab(RFMain.tab);
+		setCreativeTab(RFMain.cTab);
 	}
 	
 	@Override
