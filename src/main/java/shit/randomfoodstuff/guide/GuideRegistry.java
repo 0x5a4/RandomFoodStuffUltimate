@@ -27,7 +27,7 @@ public class GuideRegistry {
 		}
 		
 		if (!tab.getName().equals(name)) {
-			System.err.printf("Bruteforcing name override for tab %s due to Normalization and keeping Things consistent Reasons", tab.getClass().getName());
+			System.err.printf("Bruteforcing name override for tab %s due to Normalization and keeping Things consistent Reasons\n", tab.getClass().getName());
 			System.err.println("Insead using: " + name);
 			tab.setName(name);
 		}
@@ -46,6 +46,10 @@ public class GuideRegistry {
 	
 	public static GuideTab getTab(String name) {
 		return tabList.get(name);
+	}
+	
+	public static GuideTab getDefaultTab() {
+		return getTab(defaultGuideTab);
 	}
 	
 	public static boolean doesTabExist(String name) {
