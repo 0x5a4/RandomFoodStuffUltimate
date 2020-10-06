@@ -53,10 +53,11 @@ public class RandomCraftingHandler {
 		GameRegistry.addShapedRecipe(new ItemStack(itemSoupLadle), " SI", " I ", "II ", Character.valueOf('S'), Items.stick, Character.valueOf('I'), Items.iron_ingot);
 		GameRegistry.addShapedRecipe(new ItemStack(itemWarpingSchnitzel), "AEB", "ESE", "BEA", Character.valueOf('A'), new ItemStack(Items.dye, 1, 10), Character.valueOf('E'), Items.ender_eye, Character.valueOf('S'), new ItemStack(itemSchnitzel, 1, 2), Character.valueOf('B'), new ItemStack(Items.dye, 1, 5));
 		GameRegistry.addShapedRecipe(new ItemStack(itemWarpingSchnitzel), "AEB", "ESE", "BEA", Character.valueOf('A'), new ItemStack(Items.dye, 1, 5), Character.valueOf('E'), Items.ender_eye, Character.valueOf('S'), new ItemStack(itemSchnitzel, 1, 2), Character.valueOf('B'), new ItemStack(Items.dye, 1, 10));
-		GameRegistry.addShapedRecipe(new ItemStack(itemFlyingSchnitzel), "IEI", " G ", "FSF", Character.valueOf('I'), Items.gold_nugget, Character.valueOf('E'), Items.ender_pearl, Character.valueOf('G'), Items.gold_ingot, Character.valueOf('F'), Items.feather, Character.valueOf('S'), new ItemStack(itemSchnitzel, 1, 2));
+		GameRegistry.addShapedRecipe(new ItemStack(itemFlyingSchnitzel), "IEI", " G ", "FSF", Character.valueOf('I'), Items.gold_nugget, Character.valueOf('E'), Items.ender_pearl, Character.valueOf('G'), RandomItems.itemFloatingSauce, Character.valueOf('F'), Items.ghast_tear, Character.valueOf('S'), new ItemStack(itemSchnitzel, 1, 2));
 		GameRegistry.addShapedRecipe(new ItemStack(itemAwfullBreaker), "AAA", " I ", " A ", Character.valueOf('A'), blockAwfull, Character.valueOf('I'), Items.iron_ingot);
 		GameRegistry.addShapedRecipe(new ItemStack(itemCactusGuide), " B ", " P ", " M ", Character.valueOf('B'), Items.book, Character.valueOf('P'), Items.flower_pot, Character.valueOf('M'), new ItemStack(Items.dye, 1, 15));
 		GameRegistry.addShapedRecipe(new ItemStack(itemBobTheBenni), " D ", "SBM", "   ", Character.valueOf('D'), Items.diamond_pickaxe, Character.valueOf('S'), Items.cooked_beef, Character.valueOf('B'), new ItemStack(itemBenni, 1, 1), Character.valueOf('M'), itemClubMate);
+		GameRegistry.addShapedRecipe(new ItemStack(itemFloatingSauce), "F F", "GBG", " T ", Character.valueOf('F'), Items.feather, Character.valueOf('G'), Items.glowstone_dust, Character.valueOf('B'), Items.glass_bottle, Character.valueOf('T'), Items.ghast_tear);
 	}
 	
 	private static void fatInfuse() {

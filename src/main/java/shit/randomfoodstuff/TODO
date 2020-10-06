@@ -10,12 +10,14 @@ QUALITY OF LIFE
 -Food Rebalance!!!!!
 -Guide
     -Collection of all Spices/Reactions discovered
-    -Rework page system!!! Code is bullshit
+    -Rework page system!!! In Progress -> guide2.0 branch
+    -Fix Formatter(inconsistent)
 -All Potions under 1 ID
 -Pepperoni own DamageSource
+-EntityJoinWorld
+    -Achievement "A fresh Start"
+        -> Give Cactus Guide
 -Extend Config
--Floating Effect
-    -Texture
 -Model System
     -Automatic Rotation(Impossible without very complicated Math?)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

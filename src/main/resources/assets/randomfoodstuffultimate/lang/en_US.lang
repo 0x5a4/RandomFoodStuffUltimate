@@ -48,10 +48,12 @@ tile.blockMate.name=Mate Tee
 //Articles
 
 //Cooking
-guide.article.cooking.cookingPot.text=You always considered {c:Blue}food{r} a boring and annoying matter one has to deal with and can't get rid of? Well the {c:Yellow}Cooking pot{r} opens up terrificly many new options. To function it needs a source of heat beneath it. Put up to three {c:Blue}ingredients{r} into the pot to cook a {c:Blue}delicious soup{r}, out of which you can get two portions by filling it into {c:Black}bowls{r}.{p}A {c:Red}soup ladle{r} is a useful tool when working with the {c:Yellow}cooking pot{r}. Cooking {c:Blue}food{r} into {c:Blue}soup{r} does not only save you time when actually eating, but it also allows you spice it up a little. {c:Blue}Spices{r} will grant you various unique effects, which also have a downside to them. You can add up to two {c:Blue}spices{r} to the {c:Blue}soup.{r}
+guide.article.cooking.cookingPot.text=You always considered {c:Blue}food{r} a boring and annoying matter one has to deal with and can't get rid of? Well the {c:Yellow}Cooking pot{r} opens up terrificly many new options. To function it needs a source of heat beneath it. Put up to three {c:Blue}ingredients{r} into the pot to cook a {c:Blue}delicious soup{r}, out of which you can get two portions by filling it into {c:Black}bowls{r}.{p}A {c:Red}soup ladle{r} is a useful tool when working with the {c:Yellow}cooking pot{r}. Cooking {c:Blue}food{r} into {c:Blue}soup{r} does not only save you time when actually eating, but it also allows you spice it up a little. {c:Blue}Spices{r} will grant you various unique effects, which also have a downside to them. You can add up to two {c:Blue}spices{r} to the {c:Blue}soup.
 guide.article.cooking.cookingPot.heading=Cooking Pot
 guide.article.cooking.soupLadle.text=The {c:Yellow}Soup Ladle {r}is an essential tool for cooking with the {c:Red}Cooking Pot{r}. It is used to remove all remnants of food from the {c:Red}Cooking Pot{r}, so new {c:Blue}ingredients {r}and {c:Blue}spices {r}can be tossed in.
 guide.article.cooking.soupLadle.heading=Soup Ladle
+guide.article.cooking.spices.text=Spices broaden the purpose of {c:Blue}food{r}. Seasoned {c:Blue}soup{r} shall grant you new powers, which always come with their downsides. Most of them are rather situational but can be extremely useful. In the following I shall tell you more about the effects of certain {c:Blue}spices{r}.{p}The {c:Yellow}spicy effect{r} will set you on fire. The {c:Blue}pepperoni{r} is so hot, that you have to find water fast! As soon as the fire is extinguished, the speed vanishes as well.{p}The {c:Yellow}awake effect{r} will give you enough energy to mine very efficently. But because the {c:Blue}Mate Tea{r} is keeping you on your feet you won't be able to sleep while the effect is active.{p}The {c:Yellow}mushroom{r} effect, caused by the {c:Blue}supernatural mushroom{r} will give you strength and better sight at night, but light will be too bright for your sensitive eyes.{p}The {c:Yellow}Mathis{r} effect will make you extremely vulnerable and grant you speed and jump height in exchange. All it needs is a {c:Blue}mutant lauch{r}.{p}The {c:Yellow}well fat/fed{r} effect will simply saturate you for the duration of the effect. This is caused by the {c:Blue}fatmodified Benni{r}.{p}Be careful with the {c:Yellow}"Bumm Bumm"{r} effect, for it will make you blow up right after you are finished eating. The source of this power is a block of {c:Red}TnT{r}.{p}A specialty is the {c:Yellow}floating{r} effect. After you consumed the {c:Blue}soup{r} with the {c:Blue}floating sauce{r} in it, you won't be able to fall or ascend. For the duration of the effect you will stay on the same level of height.
+guide.article.cooking.spices.heading=Spices
 
 //Items
 guide.article.items.baguette.text=This is a french magic wand, used to control the weather. A {c:Yellow}Baguette Magique {r}can be either a powerful weapon by casting lightning bolts around the one daring to try it, or simply a convenience item by starting or ending storms (cower for this power). Be careful!
@@ -110,8 +112,8 @@ achievement.cookingPot=Chef
 achievement.cookingPot.desc=This looks like a weird Wok
 achievement.soup=Do i really wanna eat this?
 achievement.soup.desc=Its undefined whats inside...
-achievement.guide=Your best friend
-achievement.guide.desc=Grow a Cactus Guide
+achievement.joinWorld=Hello there!
+achievement.joinWorld.desc=Heres your new Friend :)
 achievement.completionist=Joining the Food-Elite
 achievement.completionist.desc=Complete 'em all
 
@@ -149,7 +151,7 @@ randomFoodStuff.achievement.cookingPot=Chef
 randomFoodStuff.achievement.cookingPot.desc=This looks like a weird Wok
 randomFoodStuff.achievement.soup=Do i really wanna eat this?
 randomFoodStuff.achievement.soup.desc=Its undefined whats inside...
-randomFoodStuff.achievement.guide=Your best friend
-randomFoodStuff.achievement.guide.desc=Grow a Cactus Guide
+randomFoodStuff.achievement.guide=Hello there!
+randomFoodStuff.achievement.guide.desc=Heres your new Friend :)
 randomFoodStuff.achievement.completionist=Joining the Food-Elite
 randomFoodStuff.achievement.completionist.desc=Complete 'em all

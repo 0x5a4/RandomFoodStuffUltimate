@@ -5,6 +5,7 @@ import static shit.randomfoodstuff.RandomAchievements.getAchievementByName;
 import java.util.Iterator;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -84,6 +85,11 @@ public class AchievementHandler {
 			event.player.addStat(getAchievementByName("cookingPot"), 1);
 		}
 	}
+	
+	@SubscribeEvent
+	public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
+		event.player.addStat(RandomAchievements.getAchievementByName("joinWorld"), 1);
+	}
 
 	@SubscribeEvent
 	public void onAchievement(AchievementEvent event) {
@@ -94,6 +100,12 @@ public class AchievementHandler {
 				Iterator<Achievement> iterator = RandomAchievements.getAchievementList().iterator();
 				boolean flag = true;
 
+				if (event.achievement == RandomAchievements.getAchievementByName("joinWorld")) {
+					if (!stats.hasAchievementUnlocked(event.achievement)) {
+						event.entityPlayer.inventory.addItemStackToInventory(new ItemStack(RandomItems.itemCactusGuide));
+					}
+				}
+				
 				while (iterator.hasNext()) {
 					Achievement achievement = iterator.next();
 					if (!stats.hasAchievementUnlocked(achievement) && !RandomAchievements.isCompletionException(achievement)) {

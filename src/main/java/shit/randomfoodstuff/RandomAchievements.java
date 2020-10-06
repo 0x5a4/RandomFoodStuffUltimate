@@ -21,11 +21,11 @@ public class RandomAchievements {
 	
 	public static void init() {
 		
-		addAchievement("guide", 0, 0, RandomItems.itemCactusGuide, "");
+		addAchievement("joinWorld", 0, 0, RandomItems.itemCactusGuide, ""); //Give Cactus Guide on World joining
 		addAchievement("completionist", 2, 2, RandomItems.itemArthur, "");
 		
 		//Lauch-Tree
-		addAchievement("lauch", 0, -1, RandomItems.itemLauch, "");
+		addAchievement("lauch", 0, -1, RandomItems.itemLauch, "joinWorld");
 		addAchievement("awfull", -2, -2, RandomBlocks.blockAwfull, "lauch");
 		addAchievement("pepperoni", 2, -1, RandomItems.itemPepperoni, "lauch");
 		addAchievement("spicy", 3, -3, new ItemStack(RandomItems.itemSchnitzel, 1 ,2), "pepperoni");
@@ -36,14 +36,14 @@ public class RandomAchievements {
 		addAchievement("flyHigh", 4, -6, Items.feather, "flying");
 		
 		//Fat-Tree
-		addAchievement("fat", 0, 1, RandomItems.itemFat, "");
+		addAchievement("fat", 0, 1, RandomItems.itemFat, "joinWorld");
 		addAchievement("fatInfuser", -2, 1, RandomBlocks.blockFatInfuser, "fat");
 		addAchievement("cookingPot", -4, 1, RandomBlocks.blockCookingPot, "fatInfuser");
 		addAchievement("soup", -5, 0, RandomItems.itemSoup, "cookingPot");
 		addAchievement("benni", -2, 3, new ItemStack(RandomItems.itemBenni, 1, 2), "fatInfuser");
 		
 		//Special
-		getAchievementByName("guide").setSpecial();
+		getAchievementByName("joinWorld").setSpecial();
 		getAchievementByName("completionist").setSpecial();
 		
 		addAchievementException(getAchievementByName("completionist"));

@@ -125,6 +125,7 @@ public class ClientProxy implements IProxy {
 		//Cooking
 		GuideRegistry.addGuideArticle("cooking.cookingPot", new SimpleGuideArticle().addRecipes(new ItemStack(RandomBlocks.blockCookingPot)));
 		GuideRegistry.addGuideArticle("cooking.soupLadle", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemSoupLadle)));
+		GuideRegistry.addGuideArticle("cooking.spices", new SimpleGuideArticle().addRecipes(new ItemStack(RandomItems.itemSuperMushroom)).addRecipes(new ItemStack(RandomItems.itemSuperFatBenni)).addRecipes(new ItemStack(RandomItems.itemClubMate)).addRecipes(new ItemStack(RandomItems.itemFloatingSauce)).addRecipes(new ItemStack(RandomItems.itemMutantLauch)));
 		
 		//Menus
 		GuideRegistry.addMenu("mainMenu", new GuideMainMenu());
