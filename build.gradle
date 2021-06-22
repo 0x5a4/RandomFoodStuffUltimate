@@ -22,7 +22,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.5"
+version = "1.5.1.03"
 group= "shit.randomfoodstuff" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "randomfoodstuff"
 
@@ -32,6 +32,7 @@ minecraft {
 }
 
 dependencies {
+
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"

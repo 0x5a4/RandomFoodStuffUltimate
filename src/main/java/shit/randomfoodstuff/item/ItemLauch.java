@@ -1,7 +1,5 @@
 package shit.randomfoodstuff.item;
 
-import java.util.List;
-
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,30 +10,32 @@ import shit.randomfoodstuff.Reference;
 import shit.randomfoodstuff.entity.EntityItemLauch;
 import shit.randomfoodstuff.util.RandomFoodSeed;
 
+import java.util.List;
+
 public class ItemLauch extends RandomFoodSeed {
 
-	public ItemLauch(int parHealAmount, float parSaturationModifier, Block parBlockPlant, Block parSoilBlock) {
-		super(parHealAmount, parSaturationModifier, parBlockPlant, parSoilBlock);
-		
-		setUnlocalizedName("itemLauch");
-		setTextureName(Reference.TextureName + "itemLauchSeed");
-		setCreativeTab(RFMain.cTab);
-	}
-	
-	@Override
-	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool) {
-		list.add("This appears to be some sort of Mathis...");
-		super.addInformation(stack, player, list, bool);
-	}
-	
-	@Override
-	public boolean hasCustomEntity(ItemStack stack) {
-		return true;
-	}
-	
-	@Override
-	public Entity createEntity(World world, Entity location, ItemStack itemstack) {
-		return new EntityItemLauch(world, location, itemstack);
-	}
+    public ItemLauch(int parHealAmount, float parSaturationModifier, Block parBlockPlant, Block parSoilBlock) {
+        super(parHealAmount, parSaturationModifier, parBlockPlant, parSoilBlock);
+
+        setUnlocalizedName("itemLauch");
+        setTextureName(Reference.TextureName + "itemLauchSeed");
+        setCreativeTab(RFMain.cTab);
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool) {
+        list.add("This appears to be some sort of Mathis...");
+        super.addInformation(stack, player, list, bool);
+    }
+
+    @Override
+    public boolean hasCustomEntity(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public Entity createEntity(World world, Entity location, ItemStack itemstack) {
+        return new EntityItemLauch(world, location, itemstack);
+    }
 
 }

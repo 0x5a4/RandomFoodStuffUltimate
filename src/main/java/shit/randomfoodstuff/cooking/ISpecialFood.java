@@ -4,6 +4,7 @@ import net.minecraft.item.ItemStack;
 
 public interface ISpecialFood {
 
-	public int getFoodLevelForStack(ItemStack stack);
-	public float getSaturationForStack(ItemStack stack);
+    public int getFoodLevelForStack(ItemStack stack);
+
+    public float getSaturationForStack(ItemStack stack);
 }

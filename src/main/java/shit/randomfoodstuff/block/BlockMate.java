@@ -1,7 +1,5 @@
 package shit.randomfoodstuff.block;
 
-import java.util.Random;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -11,40 +9,39 @@ import shit.randomfoodstuff.RandomItems;
 import shit.randomfoodstuff.Reference;
 import shit.randomfoodstuff.util.RandomCrops;
 
-public class BlockMate extends RandomCrops{
+import java.util.Random;
 
-	private static final String texturename = "BlockMate_";
-	
-	public BlockMate() {
-		super();
-		
-		setBlockName("blockMate");
-	}
-	
-	@Override
-    public int quantityDropped(int parMetadata, int parFortune, Random parRand)
-    {
+public class BlockMate extends RandomCrops {
+
+    private static final String texturename = "BlockMate_";
+
+    public BlockMate() {
+        super();
+
+        setBlockName("blockMate");
+    }
+
+    @Override
+    public int quantityDropped(int parMetadata, int parFortune, Random parRand) {
         if (parMetadata == 7) {
-        	return parRand.nextInt(3) + 2;
+            return parRand.nextInt(3) + 2;
         } else {
-        	return 1;
+            return 1;
         }
     }
 
     @Override
-    public Item getItemDropped(int parMetadata, Random parRand, int parFortune)  
-    {
-    	return RandomItems.itemMateTee;
+    public Item getItemDropped(int parMetadata, Random parRand, int parFortune) {
+        return RandomItems.itemMateTee;
     }
-    
+
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister parIIconRegister)
-    {
-          iIcon = new IIcon[maxGrowthStage+1];
-          for (int i = 0; i <= 7; i++) {
-        	  iIcon[i] = parIIconRegister.registerIcon(Reference.TextureName + texturename + i);
-          }
+    public void registerBlockIcons(IIconRegister parIIconRegister) {
+        iIcon = new IIcon[maxGrowthStage + 1];
+        for (int i = 0; i <= 7; i++) {
+            iIcon[i] = parIIconRegister.registerIcon(Reference.TextureName + texturename + i);
+        }
     }
 
 }

@@ -5,5 +5,5 @@ import net.minecraft.item.ItemStack;
 
 public interface IBenniNotRepairable {
 
-	public boolean canRepair(ItemStack stack, EntityPlayer player);
+    public boolean canRepair(ItemStack stack, EntityPlayer player);
 }

@@ -6,9 +6,9 @@ import shit.randomfoodstuff.Reference;
 
 public class ItemFat extends Item {
 
-	public ItemFat() {
-		setUnlocalizedName("itemFat");
-		setTextureName(Reference.TextureName + "itemFat");
-		setCreativeTab(RFMain.cTab);
-	}
+    public ItemFat() {
+        setUnlocalizedName("itemFat");
+        setTextureName(Reference.TextureName + "itemFat");
+        setCreativeTab(RFMain.cTab);
+    }
 }
