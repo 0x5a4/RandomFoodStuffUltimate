@@ -14,7 +14,7 @@ crash-reports/
 /.idea/
 /.metadata/
 /.settings/
-/libs/
+# /libs/ forgive me for my sins
 /saves/
 /resourcepacks/
 /logs/
