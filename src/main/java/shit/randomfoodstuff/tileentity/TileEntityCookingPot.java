@@ -203,7 +203,7 @@ public class TileEntityCookingPot extends RandomInventoryTileEntity {
         if (this.soupRemaining <= 0) {
             soupRemaining = soupVal * 2;
             CreateSoupEvent event = new CreateSoupEvent(getWorldObj(), xCoord, yCoord, zCoord);
-            MinecraftForge.EVENT_BUS.post(event);#
+            MinecraftForge.EVENT_BUS.post(event);
             this.markDirty();
         }
     }
