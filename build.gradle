@@ -18,6 +18,33 @@ plugins {
     id 'maven-publish'
 }
 
+repositories {
+    // <3
+    maven {
+        name = "mightypirates"
+        url = "https://maven.cil.li/"
+        metadataSources {
+            mavenPom()
+            artifact()
+        }
+    }
+    // These are necessary because some parts of the maven repo is weirdly structured
+    ivy {
+        name 'weird maven repos'
+        artifactPattern "https://maven.cil.li/[module]/[revision]/[module]-[revision].[ext]"
+        metadataSources {
+            artifact()
+        }
+    }
+    ivy {
+        name 'weird maven repos 2'
+        artifactPattern "https://maven.cil.li/[module]/[revision]/[module]-[revision]-[classifier].[ext]"
+        metadataSources {
+            artifact()
+        }
+    }
+}
+
 apply plugin: 'forge'
 
 // These settings allow you to choose what version of Java you want to be compatible with. Forge 1.7.10 runs on Java 6 to 8.
@@ -36,7 +63,10 @@ dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     // implementation 'mcp.mobius.waila:Waila:1.5.9_1.7.10'
-    implementation fileTree('libs/')
+    compileOnly "codechicken:CodeChickenLib:${project.minecraft_version}-${project.ccl_version}:dev"
+    compileOnly "codechicken:NotEnoughItems:${project.minecraft_version}-${project.nei_version}:dev"
+    compileOnly "mcp.mobius.waila:Waila:${project.waila_version}_${project.minecraft_version}:dev"
+    compileOnly name: 'BloodMagic', version: project.bloodmagic_version, ext: 'jar', classifier: 'dev'
 }
 
 processResources {
